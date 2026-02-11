@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Amritha Mallikarjun</title>
+
+<style>
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #5f6c7b;
+  --line: #e6e9ee;
+  --accent: #2d6cdf;
+  --max: 1000px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.wrapper {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+nav a:hover { color: var(--text); }
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+
+.subhead {
+  margin: 0 0 26px;
+  color: var(--muted);
+  max-width: 90ch;
+}
+
+.section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.block {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.value {
+  margin: 0;
+  font-size: 16px;
+}
+
+.value a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.value a:hover { text-decoration: underline; }
+
+.address {
+  white-space: pre-line;
+}
+
+.photo-wrap {
+  position: sticky;
+  top: 24px;
+}
+
+.profile-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.photo-caption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.links {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.links a:hover { text-decoration: underline; }
+
+footer {
+  margin-top: 60px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  header { flex-direction: column; align-items: flex-start; gap: 10px; }
+  nav a { margin-left: 0; margin-right: 18px; }
+  nav { display: flex; flex-wrap: wrap; row-gap: 6px; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .photo-wrap { position: static; }
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="name">Amritha Mallikarjun, Ph.D.</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="projects.html">Projects</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <h1>Contact</h1>
+  <p class="subhead">
+    For research collaborations, applied projects, or speaking requests, email is the best way to reach me.
+  </p>
+
+  <div class="section">
+    <div class="contact-grid">
+
+      <!-- Left: contact details -->
+      <div>
+        <div class="block">
+          <p class="label">Email</p>
+          <p class="value">
+            <a href="mailto:amritham@upenn.edu">amritham@upenn.edu</a>
+          </p>
+        </div>
+
+        <div class="block" style="margin-top:14px;">
+          <p class="label">Work address</p>
+          <p class="value address">3401 Grays Ferry Ave, Bldg 470
+Philadelphia, PA 19147</p>
+        </div>
+
+        <!-- Optional links: add/remove as you like -->
+        <div class="block" style="margin-top:14px;">
+          <p class="label">Profiles</p>
+          <div class="links">
+            <!-- Replace # with your actual links, or delete any you don't want -->
+            <a href="#" target="_blank" rel="noopener">Google Scholar</a>
+            <a href="#" target="_blank" rel="noopener">ORCID</a>
+            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: photo -->
+      <div class="photo-wrap">
+        <img class="profile-photo" src="amritha-and-finder.jpg" alt="Photo of Amritha Mallikarjun holding a Lagotto Romagnolo puppy in training at the Penn Vet Working Dog Center">
+
+        <div class="photo-caption">
+          Penn Vet Working Dog Center, Philadelphia, PA.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Amritha Mallikarjun
+  </footer>
+
+</div>
+</body>
+</html>
