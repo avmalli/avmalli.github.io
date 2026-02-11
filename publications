@@ -1,0 +1,265 @@
+<div class="section">
+  <h2>Selected publications</h2>
+  <p class="note">Selected publications are also listed in the complete publication list below.</p>
+
+  <div class="selected">
+
+    <!-- 2024 Vocoded Speech -->
+    <div class="sel-item" id="sel-2024-vocoded-speech">
+      <p class="sel-citation">
+        Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2024). Perception of vocoded speech in domestic dogs.
+        <em>Animal Cognition</em>, 27(1), 34.
+      </p>
+      <p class="sel-blurb">
+        Controlled evaluation of performance under signal degradation to isolate what information is necessary for recognition. Emphasizes robustness, failure modes, and generalization when input quality is systematically degraded.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <a href="#" target="_blank" rel="noopener">PDF</a>
+        <a href="projects.html#signal-degradation-eval">Project</a>
+      </div>
+    </div>
+
+    <!-- 2023 Translational Detection -->
+    <div class="sel-item" id="sel-2023-scent-detection-sip">
+      <p class="sel-citation">
+        Mallikarjun, A., Collins, A., Verta, A., Hanadari-Levy, A., Chaskes, M. B., Rosen, M. R., ... &amp; Otto, C. M. (2023). Canine scent detection of sinonasal-inverted papilloma in blood plasma and nasal secretions.
+        <em>Journal of Veterinary Behavior</em>, 62, 29-38.
+      </p>
+      <p class="sel-blurb">
+        End-to-end translational evaluation in a clinically relevant setting, integrating study design, data constraints, and performance analysis. Highlights rigor under real-world operational conditions.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <a href="#" target="_blank" rel="noopener">PDF</a>
+        <a href="projects.html#translational-detection-evaluation">Project</a>
+      </div>
+    </div>
+
+    <!-- 2021 Segmentation -->
+    <div class="sel-item" id="sel-2021-segmentation-simulation">
+      <p class="sel-citation">
+        Tsui, A. S. M., Erickson, L. C., Mallikarjun, A., Thiessen, E. D., &amp; Fennell, C. T. (2021). Dual language statistical word segmentation in infancy: Simulating a language-mixing bilingual environment.
+        <em>Developmental Science</em>, 24(3), e13050.
+      </p>
+      <p class="sel-blurb">
+        Empirical and computational framing of learning in mixed, high-variance inputs. Addresses generalization when training and test distributions are not cleanly separated.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <a href="#" target="_blank" rel="noopener">PDF</a>
+        <a href="projects.html#learning-from-mixed-inputs">Project</a>
+      </div>
+    </div>
+
+    <!-- 2019 Cocktail Party -->
+    <div class="sel-item" id="sel-2019-cocktail-party-dogs">
+      <p class="sel-citation">
+        Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2019). The cocktail party effect in the domestic dog (Canis familiaris).
+        <em>Animal Cognition</em>, 22(3), 423-432.
+      </p>
+      <p class="sel-blurb">
+        Study of recognition performance under competing auditory interference, isolating factors that support or degrade selective attention in realistic environments.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <a href="#" target="_blank" rel="noopener">PDF</a>
+        <a href="projects.html#robustness-in-noise">Project</a>
+      </div>
+    </div>
+
+    <!-- 2017 Review (Listed Last) -->
+    <div class="sel-item" id="sel-2017-review">
+      <p class="sel-citation">
+        Mallikarjun, A., Newman, R. S., &amp; Novick, J. M. (2017). Exploiting the interconnected lexicon: Bootstrapping English language learning in young Spanish speakers.
+        <em>Translational Issues in Psychological Science</em>, 3(1), 34.
+      </p>
+      <p class="sel-blurb">
+        Review and synthesis comparing psycholinguistic evidence on bilingual language learning with prevailing pedagogical assumptions. Bridges empirical research and educational practice, highlighting where evidence supports or challenges common instructional models.
+      </p>
+      <div class="links">
+        <a href="#" target="_blank" rel="noopener">DOI</a>
+        <a href="#" target="_blank" rel="noopener">PDF</a>
+        <a href="projects.html#bilingual-review">Project</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h2>All publications</h2>
+
+  <!-- ===================== 2025 ===================== -->
+  <div class="year-block">
+    <p class="year">2025</p>
+    <ul class="publist">
+
+      <!-- INSERT 2025 PUBLICATION #1 -->
+      <li class="pub">
+        <p class="citation">
+          Author, A., Author, B., &amp; Mallikarjun, A. (2025). Title of paper.
+          <em>Journal Name</em>, Volume(Issue), pages.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="#" target="_blank" rel="noopener">Project</a>
+        </div>
+      </li>
+
+      <!-- ADD MORE 2025 PUBLICATIONS ABOVE THIS LINE -->
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2024 ===================== -->
+  <div class="year-block">
+    <p class="year">2024</p>
+    <ul class="publist">
+
+      <!-- INSERT 2024 PUBLICATION #1 -->
+      <li class="pub">
+        <p class="citation">
+          Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2024).
+          Perception of vocoded speech in domestic dogs.
+          <em>Animal Cognition</em>, 27(1), 34.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="projects.html#signal-degradation-eval">Project</a>
+        </div>
+      </li>
+
+      <!-- INSERT OTHER 2024 PUBLICATIONS BELOW -->
+      <li class="pub">
+        <p class="citation">
+          Author, A., Mallikarjun, A., &amp; Author, C. (2024).
+          Title of additional 2024 paper.
+          <em>Journal Name</em>, Volume(Issue), pages.
+        </p>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2023 ===================== -->
+  <div class="year-block">
+    <p class="year">2023</p>
+    <ul class="publist">
+
+      <li class="pub">
+        <p class="citation">
+          Mallikarjun, A., Collins, A., Verta, A., Hanadari-Levy, A.,
+          Chaskes, M. B., Rosen, M. R., ... &amp; Otto, C. M. (2023).
+          Canine scent detection of sinonasal-inverted papilloma in blood plasma and nasal secretions.
+          <em>Journal of Veterinary Behavior</em>, 62, 29-38.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="projects.html#translational-detection-evaluation">Project</a>
+        </div>
+      </li>
+
+      <!-- ADD ADDITIONAL 2023 PUBLICATIONS HERE -->
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2022 ===================== -->
+  <div class="year-block">
+    <p class="year">2022</p>
+    <ul class="publist">
+
+      <!-- INSERT 2022 PUBLICATIONS -->
+      <li class="pub">
+        <p class="citation">
+          Author, A., Author, B., &amp; Mallikarjun, A. (2022).
+          Title of paper.
+          <em>Journal Name</em>, Volume(Issue), pages.
+        </p>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2021 ===================== -->
+  <div class="year-block">
+    <p class="year">2021</p>
+    <ul class="publist">
+
+      <li class="pub">
+        <p class="citation">
+          Tsui, A. S. M., Erickson, L. C., Mallikarjun, A.,
+          Thiessen, E. D., &amp; Fennell, C. T. (2021).
+          Dual language statistical word segmentation in infancy:
+          Simulating a language-mixing bilingual environment.
+          <em>Developmental Science</em>, 24(3), e13050.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="projects.html#learning-from-mixed-inputs">Project</a>
+        </div>
+      </li>
+
+      <!-- ADD OTHER 2021 PUBLICATIONS -->
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2019 ===================== -->
+  <div class="year-block">
+    <p class="year">2019</p>
+    <ul class="publist">
+
+      <li class="pub">
+        <p class="citation">
+          Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2019).
+          The cocktail party effect in the domestic dog (Canis familiaris).
+          <em>Animal Cognition</em>, 22(3), 423-432.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="projects.html#robustness-in-noise">Project</a>
+        </div>
+      </li>
+
+      <!-- ADD OTHER 2019 PUBLICATIONS -->
+
+    </ul>
+  </div>
+
+
+  <!-- ===================== 2017 ===================== -->
+  <div class="year-block">
+    <p class="year">2017</p>
+    <ul class="publist">
+
+      <li class="pub">
+        <p class="citation">
+          Mallikarjun, A., Newman, R. S., &amp; Novick, J. M. (2017).
+          Exploiting the interconnected lexicon: Bootstrapping English language learning in young Spanish speakers.
+          <em>Translational Issues in Psychological Science</em>, 3(1), 34.
+        </p>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">DOI</a>
+          <a href="#" target="_blank" rel="noopener">PDF</a>
+          <a href="projects.html#bilingual-review">Project</a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+
+
