@@ -105,9 +105,11 @@ nav a:hover {
   color: var(--muted);
 }
 
-.link {
-  display: flex;
-  justify-content: space-between;
+.link{
+  display: grid;
+  grid-template-columns: 140px 1fr; /* left label width */
+  column-gap: 16px;
+  align-items: start;
   padding: 12px 0;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
@@ -115,14 +117,24 @@ nav a:hover {
   font-size: 14px;
 }
 
-.link:last-child {
+.link strong{
+  display: block;
+  white-space: nowrap;
+}
+
+.link span{
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: right;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.link:last-child{
   border-bottom: none;
 }
 
-.link span {
-  color: var(--muted);
-  font-size: 13px;
-}
 
 .grid {
   display: grid;
