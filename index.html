@@ -1,307 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Amritha Mallikarjun</title>
-  <meta name="description" content="Research on canine cognition, olfaction, and behavior; detection dogs and applied working dog science." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amritha Mallikarjun</title>
 
-  <style>
-    :root{
-      --bg: #0b0f17;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.08);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.70);
-      --faint: rgba(255,255,255,0.55);
-      --line: rgba(255,255,255,0.14);
-      --accent: #7dd3fc; /* soft cyan */
-      --accent2: #a78bfa; /* soft violet */
-      --shadow: 0 18px 50px rgba(0,0,0,0.45);
-      --radius: 18px;
-      --radius2: 14px;
-      --max: 980px;
-    }
+<style>
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #5f6c7b;
+  --line: #e6e9ee;
+  --accent: #2d6cdf;
+  --max: 1000px;
+}
 
-    *{ box-sizing: border-box; }
-    body{
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(900px 500px at 15% 10%, rgba(125,211,252,0.18), transparent 60%),
-        radial-gradient(900px 500px at 85% 15%, rgba(167,139,250,0.18), transparent 55%),
-        radial-gradient(1200px 700px at 50% 100%, rgba(255,255,255,0.06), transparent 60%),
-        var(--bg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      line-height: 1.55;
-    }
+* { box-sizing: border-box; }
 
-    a{ color: var(--text); text-decoration: none; }
-    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
 
-    .wrap{
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 42px 20px 70px;
-    }
+.wrapper {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
 
-    header{
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 18px;
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--card2), var(--card));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 14px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 10;
-    }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+}
 
-    .brand{
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 240px;
-    }
-    .brand .name{
-      font-weight: 650;
-      letter-spacing: 0.2px;
-      font-size: 16px;
-      margin: 0;
-    }
-    .brand .tag{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-    }
+.name {
+  font-weight: 600;
+  font-size: 18px;
+}
 
-    nav{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
-    }
-    nav a{
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    nav a:hover{
-      border-color: var(--line);
-      color: var(--text);
-      text-decoration: none;
-      background: rgba(255,255,255,0.04);
-    }
+nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-    .hero{
-      padding: 42px 6px 10px;
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 20px;
-      align-items: start;
-    }
+nav a:hover {
+  color: var(--text);
+}
 
-    .hero h1{
-      margin: 0 0 10px;
-      font-size: 40px;
-      line-height: 1.1;
-      letter-spacing: -0.6px;
-    }
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
 
-    .subtitle{
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 58ch;
-    }
+.hero h1 {
+  font-size: 38px;
+  line-height: 1.2;
+  margin: 0 0 20px;
+  font-weight: 600;
+}
 
-    .pillrow{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 18px 0 0;
-    }
-    .pill{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      padding: 9px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .pill strong{ color: var(--text); font-weight: 600; }
+.hero p {
+  margin: 0 0 20px;
+  color: var(--muted);
+  max-width: 60ch;
+}
 
-    .card{
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, var(--card2), var(--card));
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
 
-    .card h2{
-      margin: 0 0 10px;
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      color: var(--muted);
-      font-weight: 650;
-      text-transform: uppercase;
-    }
+.tag {
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--muted);
+}
 
-    .links{
-      display: grid;
-      gap: 10px;
-    }
-    .link{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 12px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-    }
-    .link span{
-      color: var(--muted);
-      font-size: 13px;
-    }
-    .link b{
-      font-weight: 600;
-      color: var(--text);
-      font-size: 14px;
-    }
-    .link:hover{
-      background: rgba(255,255,255,0.06);
-      text-decoration: none;
-    }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 24px;
+}
 
-    .grid{
-      margin-top: 22px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
+.card h3 {
+  margin-top: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
 
-    .mini{
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      border-radius: var(--radius2);
-      padding: 16px;
-      min-height: 120px;
-    }
-    .mini h3{
-      margin: 0 0 6px;
-      font-size: 16px;
-      letter-spacing: -0.2px;
-    }
-    .mini p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .mini a{
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 600;
-    }
+.link {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+}
 
-    footer{
-      margin-top: 40px;
-      color: var(--faint);
-      font-size: 13px;
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-    }
+.link:last-child {
+  border-bottom: none;
+}
 
-    @media (max-width: 860px){
-      .hero{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: 1fr; }
-      header{ position: relative; top: 0; }
-      .brand{ min-width: 0; }
-      .hero h1{ font-size: 34px; }
-    }
-  </style>
+.link span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.mini {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.mini h4 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mini p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer {
+  margin-top: 80px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrapper">
 
-    <header>
-      <div class="brand">
-        <p class="name">Amritha Mallikarjun, Ph.D.</p>
-        <p class="tag">Senior Research Investigator · Penn Vet Working Dog Center</p>
-      </div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="publications.html">Publications</a>
-        <a href="projects.html">Projects</a>
-        <a href="cv.html">CV</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
+<header>
+  <div class="name">Amritha Mallikarjun, Ph.D.</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Publications</a>
+    <a href="#">Projects</a>
+    <a href="#">CV</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-    <section class="hero">
-      <div>
-        <h1>Canine perception and working dog science.</h1>
-        <p class="subtitle">
-          I conduct interdisciplinary research on canine cognition, olfaction, and behavior,
-          with a focus on detection dogs, sensory perception, and applied work that supports
-          training and operational decision-making.
-        </p>
+<section class="hero">
+  <div>
+    <h1>Research, evaluation, and data-driven systems.</h1>
 
-        <div class="pillrow">
-          <div class="pill"><strong>Methods:</strong> experimental design · mixed-effects models · applied field studies</div>
-          <div class="pill"><strong>Topics:</strong> detection · category learning · performance in noise</div>
-        </div>
-      </div>
+    <p>
+      I am a research scientist working at the intersection of behavioral science, statistical modeling, and applied data analysis. My work focuses on designing empirical evaluations, analyzing complex and high-variance datasets, and building reproducible analytical workflows that support clear, defensible conclusions in real-world settings.
+    </p>
 
-      <div class="card">
-        <h2>Quick links</h2>
-        <div class="links">
-          <a class="link" href="publications.html"><b>Publications</b><span>selected papers + full list</span></a>
-          <a class="link" href="projects.html"><b>Projects</b><span>methods, datasets, outputs</span></a>
-          <a class="link" href="cv.html"><b>CV</b><span>PDF + highlights</span></a>
-          <a class="link" href="contact.html"><b>Contact</b><span>email + profiles</span></a>
-        </div>
-      </div>
-    </section>
+    <p>
+      I am particularly interested in how systems learn, generalize, and fail under uncertainty, and in developing evaluation frameworks that balance rigor, interpretability, and practical impact.
+    </p>
 
-    <section class="grid">
-      <div class="mini">
-        <h3>Detection dog research</h3>
-        <p>Applied studies spanning training aids, generalization, and operational constraints.</p>
-        <a href="projects.html">Browse projects →</a>
-      </div>
-      <div class="mini">
-        <h3>Sensory perception</h3>
-        <p>Category learning and performance under adverse conditions, across modalities.</p>
-        <a href="projects.html">See methods →</a>
-      </div>
-      <div class="mini">
-        <h3>Data systems</h3>
-        <p>Tools that improve rigor, reproducibility, and throughput for working dog research.</p>
-        <a href="projects.html">View examples →</a>
-      </div>
-    </section>
-
-    <footer>
-      © <span id="y"></span> Amritha Mallikarjun · Philadelphia, PA
-    </footer>
-
+    <div class="tags">
+      <div class="tag">Experimental design</div>
+      <div class="tag">Mixed-effects & Bayesian models</div>
+      <div class="tag">Evaluation under uncertainty</div>
+      <div class="tag">Reproducible data pipelines</div>
+    </div>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <div class="card">
+    <h3>Quick Links</h3>
+
+    <a class="link" href="#">
+      <strong>Publications</strong>
+      <span>selected papers + full list</span>
+    </a>
+
+    <a class="link" href="#">
+      <strong>Projects</strong>
+      <span>evaluation work & applied research</span>
+    </a>
+
+    <a class="link" href="#">
+      <strong>CV</strong>
+      <span>PDF + highlights</span>
+    </a>
+
+    <a class="link" href="#">
+      <strong>Contact</strong>
+      <span>email + profiles</span>
+    </a>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="mini">
+    <h4>Empirical evaluation</h4>
+    <p>Designing and analyzing experiments and observational studies to assess performance, generalization, and robustness.</p>
+  </div>
+
+  <div class="mini">
+    <h4>Statistical modeling</h4>
+    <p>Generalized linear, mixed-effects, and Bayesian approaches for repeated-measures and complex behavioral data.</p>
+  </div>
+
+  <div class="mini">
+    <h4>Applied systems research</h4>
+    <p>Translating research findings into frameworks that inform policy, product decisions, and operational practice.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Amritha Mallikarjun · Philadelphia, PA
+</footer>
+
+</div>
 </body>
 </html>
-
