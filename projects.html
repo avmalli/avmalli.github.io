@@ -1,79 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Projects | Amritha Mallikarjun</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-
 <body>
+  <div class="wrapper">
 
-<header>
-  <div class="name">Amritha Mallikarjun, Ph.D.</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="publications.html">Publications</a>
-    <a href="projects.html">Projects</a>
-    <a href="cv.html">CV</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <header>
+      <div class="name">Amritha Mallikarjun, Ph.D.</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="publications.html">Publications</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="cv.html">CV</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main class="container">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subhead">
+      Selected projects spanning decision support, experimental systems, and research on perception and generalization under real-world constraints.
+    </p>
 
-    <section class="hero-small">
-      <h1>Selected Projects</h1>
-      <p>
-        Applied research, evaluation, and technical development spanning human-computer interaction,
-        experimental cognition, and operational systems.
-      </p>
-    </section>
+    <section class="project-grid">
 
-    <section class="card-grid">
-
-      <!-- Lung Transplant Decision Aid -->
-      <a class="card" href="projects/lung-transplant-decision-aid.html">
+      <a class="project-card" href="projects/lung-decision-aid.html">
         <h3>Lung Transplant Decision Aid</h3>
         <p>
-          Human-computer interaction capstone project designing a clinical decision support tool
-          to assist transplant patients in evaluating treatment tradeoffs.
+          HCI capstone project designing a clinical decision support tool to help patients understand transplant tradeoffs and prepare for evaluation.
         </p>
-        <span class="tag">HCI · UX Research · Decision Support</span>
+        <ul class="project-meta">
+          <li class="project-chip">HCI</li>
+          <li class="project-chip">Decision support</li>
+          <li class="project-chip">Usability</li>
+        </ul>
       </a>
 
-      <!-- Olfactometer Systems -->
-      <a class="card" href="projects/olfactometers.html">
+      <a class="project-card" href="projects/olfactometer-systems.html">
         <h3>Olfactometer Software & System Refinement</h3>
         <p>
-          Refined experimental control code for automated olfactometers to improve reliability,
-          usability, and reproducibility in canine olfaction research.
+          Improved experimental control code and operator workflows for automated olfactometers to increase reliability and reproducibility in behavioral testing.
         </p>
-        <span class="tag">Experimental Systems · Python · Hardware Integration</span>
+        <ul class="project-meta">
+          <li class="project-chip">Python</li>
+          <li class="project-chip">Hardware integration</li>
+          <li class="project-chip">Reproducibility</li>
+        </ul>
       </a>
 
-      <!-- Comparative Cognition -->
-      <a class="card" href="projects/comparative-cognition.html">
+      <a class="project-card" href="projects/comparative-cognition.html">
         <h3>Comparative Cognition & Category Learning</h3>
         <p>
-          Research examining how organisms form and maintain categories across sensory modalities,
-          with implications for learning under uncertainty.
+          Research on how organisms form and maintain categories across variable inputs, with implications for learning, generalization, and evaluation.
         </p>
-        <span class="tag">Behavioral Science · Modeling · Generalization</span>
+        <ul class="project-meta">
+          <li class="project-chip">Comparative cognition</li>
+          <li class="project-chip">Generalization</li>
+          <li class="project-chip">Evaluation</li>
+        </ul>
       </a>
 
-      <!-- Adverse Conditions -->
-      <a class="card" href="projects/adverse-conditions.html">
+      <a class="project-card" href="projects/adverse-conditions.html">
         <h3>Perception Under Adverse Conditions</h3>
         <p>
-          Investigating how noise, degradation, and distractors impact category perception,
-          and how experience shapes resilience in complex environments.
+          How noise, degradation, and distractors affect category perception — and how experience shapes performance when conditions aren’t ideal.
         </p>
-        <span class="tag">Robustness · Signal Degradation · Attention</span>
+        <ul class="project-meta">
+          <li class="project-chip">Noise</li>
+          <li class="project-chip">Signal degradation</li>
+          <li class="project-chip">Attention</li>
+        </ul>
       </a>
 
     </section>
 
-  </main>
+    <footer>
+      © 2026 Amritha Mallikarjun
+    </footer>
 
+  </div>
 </body>
-</html>
