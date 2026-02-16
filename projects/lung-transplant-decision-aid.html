@@ -2,138 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lung Transplant Decision Aid | Amritha Mallikarjun</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+  <div class="wrapper">
 
-<header class="site-header">
-  <div class="container nav">
-    <div class="logo">Amritha Mallikarjun, Ph.D.</div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../publications.html">Publications</a>
-      <a href="../projects.html" class="active">Projects</a>
-      <a href="../cv.pdf" target="_blank">CV</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+    <header>
+      <div class="name">Amritha Mallikarjun, Ph.D.</div>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/publications.html">Publications</a>
+        <a href="/projects.html" class="active">Projects</a>
+        <a href="/cv.html">CV</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </header>
 
-<main class="container">
-
-  <section class="hero-small">
     <h1>Lung Transplant Decision Aid</h1>
-    <p>
-      A human-computer interaction capstone project focused on designing a
-      clinical decision support tool for patients with severe COPD considering
-      lung transplantation.
-    </p>
-  </section>
-
-  <section class="project-content">
-
-    <h2>Problem</h2>
-    <p>
-      Patients with severe COPD often face a difficult choice: pursue lung
-      transplantation or continue medical management. While survival rates
-      can be similar across treatments, the tradeoffs in risk, quality of life,
-      and complications are substantial.
+    <p class="subhead">
+      Human-computer interaction capstone project designing a clinical decision support tool to help patients
+      understand transplant tradeoffs and prepare for evaluation.
     </p>
 
-    <p>
-      Our client, a practicing pulmonologist and researcher at UPMC, observed
-      that many patients misunderstood the risks, overestimated benefits,
-      or felt overwhelmed during evaluation week. Many patients had low health
-      literacy, limited computer experience, and high cognitive load.
-    </p>
+    <div class="section">
+      <h2>Context</h2>
+      <p>
+        Patients with severe COPD often face a difficult choice: pursue lung transplantation or continue medical
+        management. The survival benefit may be unclear for some patients, but the tradeoffs in risk, lifestyle,
+        and long-term outcomes are substantial.
+      </p>
+      <p>
+        Working with a pulmonologist and researcher at UPMC, we designed a web-based decision aid intended to be
+        used before evaluation week to improve comprehension, reduce overwhelm, and support values-aligned decisions.
+      </p>
+    </div>
 
-    <h2>Goal</h2>
-    <p>
-      Design a web-based decision aid that:
-    </p>
-    <ul>
-      <li>Clarifies that patients have a meaningful choice</li>
-      <li>Communicates risks and tradeoffs in digestible ways</li>
-      <li>Helps patients reflect on personal values</li>
-      <li>Improves comprehension before formal evaluation</li>
-    </ul>
+    <div class="section">
+      <h2>Goal</h2>
+      <ul style="margin:0; padding-left:18px;">
+        <li>Make the decision space explicit (patients have options, not a default path).</li>
+        <li>Communicate risks and tradeoffs clearly for varying health literacy.</li>
+        <li>Support reflection on personal values (quality of life, risk tolerance, priorities).</li>
+        <li>Prepare patients for the logistics and reality of evaluation and recovery.</li>
+      </ul>
+    </div>
 
-    <h2>My Role</h2>
-    <p>
-      I served as Technical Lead. I helped structure the decision framework,
-      translate clinical data into interpretable representations, and design
-      interactive components that balanced usability with statistical clarity.
-    </p>
+    <div class="section">
+      <h2>My role</h2>
+      <p>
+        Technical lead on the team. I helped translate clinical outcomes into interpretable representations, shaped the
+        decision framework, and iterated on interaction design to balance clarity, accuracy, and usability.
+      </p>
+    </div>
 
-    <h2>Research & Design Process</h2>
+    <div class="section">
+      <h2>Approach</h2>
+      <p style="margin-bottom:10px;">
+        We combined stakeholder and user research with iterative prototyping:
+      </p>
+      <ul style="margin:0; padding-left:18px;">
+        <li>Stakeholder interviews (clinicians, coordinators, support staff)</li>
+        <li>Review of existing decision aids and decision-science literature</li>
+        <li>Low → mid → high-fidelity prototypes</li>
+        <li>Usability testing focused on comprehension, navigation, and cognitive load</li>
+      </ul>
+    </div>
 
-    <h3>User Research</h3>
-    <ul>
-      <li>Stakeholder interviews (pulmonologists, surgeons, coordinators, social workers)</li>
-      <li>Observation of patient counseling sessions</li>
-      <li>Client data analysis (COBALT dataset, DECIDE survey, focus group)</li>
-      <li>Review of decision science literature and existing decision aids</li>
-    </ul>
+    <div class="section">
+      <h2>Key design decisions</h2>
+      <ul style="margin:0; padding-left:18px;">
+        <li><strong>Minimal information per screen</strong> to reduce cognitive load.</li>
+        <li><strong>Guided flow + progress cues</strong> to keep patients oriented.</li>
+        <li><strong>Risk visuals that are concrete</strong> (human figures rather than abstract dot plots).</li>
+        <li><strong>Values prompts</strong> to help patients articulate what matters to them before appointments.</li>
+        <li><strong>Patient narratives</strong> (where appropriate) because patients engaged more with peers than with physician explanations alone.</li>
+      </ul>
+    </div>
 
-    <p>
-      We identified a core challenge: patients often defaulted toward transplant
-      without fully understanding complications, timelines, or long-term tradeoffs.
-    </p>
+    <div class="section">
+      <h2>Why this is relevant beyond healthcare</h2>
+      <p>
+        This project is an example of designing for decision-making under uncertainty: translating complex, probabilistic
+        information into interfaces that support reasoning under real constraints (stress, limited time, varying literacy,
+        and high stakes).
+      </p>
+      <p style="margin:0;">
+        It connects directly to broader questions I work on: how people interpret noisy information, how presentation changes
+        decisions, and how to build tools that produce clearer, more defensible conclusions from messy real-world data.
+      </p>
+    </div>
 
-    <h3>Iterative Prototyping</h3>
-    <p>
-      We developed low-, medium-, and high-fidelity prototypes, testing navigation
-      structure, risk visualization, and values-elicitation quizzes.
-    </p>
+    <div class="section">
+      <h2>Artifacts</h2>
+      <p class="note" style="margin-bottom:10px;">
+        Add screenshots here when ready.
+      </p>
 
-    <ul>
-      <li>Side-by-side comparison of transplant vs. medical management</li>
-      <li>Interactive values quizzes</li>
-      <li>Risk visualization using human figures rather than abstract dots</li>
-      <li>Progress-based guided navigation</li>
-    </ul>
+      <!-- Example image block (optional). Put your image in /images and update filename -->
+      <!--
+      <img src="/images/lung-decision-aid-01.png"
+           alt="Decision aid interface screenshot"
+           style="width:100%; border:1px solid var(--line); border-radius:12px;">
+      -->
+    </div>
 
-    <h2>Key Findings</h2>
-    <ul>
-      <li>Patients preferred patient video narratives over physician explanations.</li>
-      <li>Minimal information per screen improved comprehension.</li>
-      <li>Interactive value reflection increased engagement.</li>
-      <li>Risk statistics required careful wording and contextualization.</li>
-      <li>Navigation structure significantly impacted understanding.</li>
-    </ul>
+    <footer>
+      © 2026 Amritha Mallikarjun
+    </footer>
 
-    <h2>Technical & Conceptual Contributions</h2>
-    <p>
-      This project sits at the intersection of behavioral science and
-      decision support systems. It required translating probabilistic
-      medical outcomes into formats that were accurate, interpretable,
-      and usable under real cognitive constraints.
-    </p>
-
-    <p>
-      It reflects broader themes in my work: how people interpret
-      uncertain information, how presentation affects decision quality,
-      and how to design systems that support reasoning rather than overwhelm it.
-    </p>
-
-    <h2>Impact</h2>
-    <p>
-      The final high-fidelity prototype provided structured guidance
-      through treatment tradeoffs and laid groundwork for continued
-      clinical implementation and iPad-based testing.
-    </p>
-
-    <!-- Optional image section -->
-    <h2>Images</h2>
-    <img src="../images/decision-aid-screenshot.png"
-         alt="Screenshot of lung transplant decision aid interface"
-         style="max-width:100%; border-radius:12px; margin-bottom:20px;">
-
-  </section>
-
-</main>
-
+  </div>
 </body>
 </html>
