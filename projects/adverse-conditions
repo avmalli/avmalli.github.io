@@ -1,1 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Perception Under Adverse Conditions | Amritha Mallikarjun</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <header>
+      <div class="name">Amritha Mallikarjun, Ph.D.</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../projects.html" class="active">Projects</a>
+        <a href="../cv.html">CV</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Perception under adverse conditions</h1>
+      <p class="subhead">
+        I’m interested in what happens to category perception when conditions aren’t ideal. 
+        If signals are noisy, degraded, or competing for attention, how much of the breakdown 
+        reflects limits of the sensory system — and how much reflects attention and control?
+      </p>
+
+      <div class="section">
+        <h2>The core question</h2>
+        <p>
+          To what extent do different adverse conditions impact familiar category perception, 
+          and how does experience change performance in noise?
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Speech in noise: separating attention from auditory processing</h2>
+        <p>
+          Infants have difficulty understanding speech in noise, particularly when the background 
+          is a single competing talker rather than multi-talker babble. That pattern raises an 
+          important question: is the difficulty primarily auditory (segregating speech streams), 
+          or attentional (maintaining focus on the target over time)?
+        </p>
+
+        <p>
+          Because both auditory and attentional systems are still developing in infancy, it’s hard 
+          to isolate these contributions using infant participants alone. I addressed this using a 
+          comparative approach: testing dogs, who have mature peripheral auditory systems but can 
+          show infant-like attentional limits in speech tasks.
+        </p>
+
+        <p>
+          Dogs, like infants, struggled specifically with single-talker background speech. That 
+          pattern suggests that attentional control — not just auditory resolution — plays a 
+          substantial role in speech-in-noise difficulty.
+        </p>
+
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">Vocoded speech paper</a>
+          <a href="#" target="_blank" rel="noopener">Cocktail party paper</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Olfaction in “noise”: distractors shift thresholds</h2>
+        <p>
+          I extended this framework to a different sensory system: olfaction. In collaboration 
+          with researchers at Texas Tech, we measured perceptual threshold curves for a familiar 
+          target odor (1-bromo-octane) using controlled olfactometers.
+        </p>
+
+        <p>
+          Dogs were first trained to detect decreasing concentrations of the target odor, allowing 
+          us to estimate their baseline threshold. We then repeated the procedure while introducing 
+          background distractor odors (L-carvone and methyl benzoate).
+        </p>
+
+        <p>
+          In the presence of distractors, dogs required higher concentrations of the target odor 
+          to reach the same detection performance. In other words, the background odor imposed an 
+          attentional cost. Importantly, when dogs completed the same odor-in-noise test a second time, 
+          their performance improved, suggesting that experience with the distractor context can 
+          partially mitigate its impact.
+        </p>
+
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">Olfaction in noise paper</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>What this work shows</h2>
+        <ul style="margin:0; padding-left:18px;">
+          <li>Not all “noise” has the same effect — structure matters.</li>
+          <li>Attentional constraints can meaningfully limit category perception.</li>
+          <li>Performance under adverse conditions can improve with experience.</li>
+          <li>Comparative models can help isolate mechanisms that are otherwise confounded in development.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Broader relevance</h2>
+        <p>
+          Across both auditory and olfactory domains, this work is about understanding how systems 
+          behave when inputs are messy. Rather than asking whether recognition works in ideal settings, 
+          I systematically manipulate signal quality and competing inputs to identify where and why 
+          performance changes.
+        </p>
+
+        <p style="margin:0;">
+          That same mindset — controlled degradation, careful measurement, and attention to 
+          experience-dependent change — carries into my applied and technical work.
+        </p>
+      </div>
+
+      <p class="note">
+        Back to <a href="../projects.html">Projects</a>.
+      </p>
+
+    </main>
+
+    <footer>
+      © 2026 Amritha Mallikarjun
+    </footer>
+
+  </div>
+</body>
+</html>
 
