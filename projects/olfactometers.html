@@ -57,14 +57,13 @@
           </li>
           <li class="pub">
             <p class="citation">
-              <strong>Usability gap:</strong> Trainers needed clear “what do I do next” affordances, time cues, and a way to adjust settings mid-run
-              without restarting the whole program.
+              <strong>Usability gap:</strong> Trainers needed clear workflow prompts in the UI and a way to adjust settings mid-run
+              without restarting the whole program to improve usablility and flexibility.
             </p>
           </li>
           <li class="pub">
             <p class="citation">
-              <strong>Operational risk:</strong> In real data collection, failures don’t just waste time—they can invalidate sessions, create missingness,
-              and introduce inconsistencies across experimenters.
+              <strong>Errors lead to delays:</strong> Each program crash delayed session timing, and the difficulty using the program caused missing data and introduced inconsistencies across experimenters.
             </p>
           </li>
         </ul>
@@ -73,7 +72,7 @@
       <div class="section">
         <h2>My role</h2>
         <p>
-     I redesigned portions of both the backend logic and the user interface to improve reliability, reduce failure points, and support non-expert users.
+     I redesigned portions of both the backend logic and the user interface to improve reliability, reduce failure points, and support non-expert users (dog trainers and researchers without a programming background).
         </p>
       </div>
 
@@ -100,8 +99,8 @@
 
           <li class="pub">
             <p class="citation">
-              <strong>Settings without restarting:</strong> Implemented a “change settings” pathway so trainers could correct configuration errors or adjust parameters
-              between trials without closing and reopening the program.
+              <strong>Flexible settings:</strong> Implemented a “change settings” pathway so trainers could correct configuration errors or adjust parameters
+              between trials without closing and reopening the program. Implemented a "skip trial" button to easily move past unwanted trials without waiting a minute for it to time out.
             </p>
           </li>
 
@@ -114,22 +113,29 @@
 
           <li class="pub">
             <p class="citation">
-              <strong>Operational robustness:</strong> Focused on small, high-leverage features that reduce real-world failure: clearer prompts, safer defaults,
+              <strong>Operational robustness:</strong> Focused on easy-to-implement features that reduce real-world failure: clearer prompts, safer defaults,
               and predictable recovery behavior when something goes off-script.
             </p>
           </li>
         </ul>
       </div>
 
-      <div class="section">
-        <h2>Why this matters</h2>
-        <p>
-          This project sits at the intersection of research rigor and real-world usability. The core scientific goal is controlled stimulus delivery and
-          clean measurement; the operational reality is that studies depend on non-expert users running many sessions under time pressure. My work made
-          the system easier to run correctly, harder to run incorrectly, and more reliable as a data collection instrument—so that experimental conclusions
-          are supported by consistent, high-quality logs rather than “best effort” manual rescue.
-        </p>
-      </div>
+<div class="section">
+  <h2>Why this matters</h2>
+
+  <p>
+    The original software was built by and for specific users who already understood the system’s assumptions. In practice, our researchers and trainers needed to run structured experiments quickly and consistently, without worrying about whether a missing field or unexpected input would crash a session or corrupt a dataset.
+  </p>
+
+  <p>
+    I rewrote validation logic, clarified trial configuration workflows, and added safeguards against common edge cases. I also standardized output formatting to make downstream statistical analysis more reliable. This make workflow easier for program users and ensured that the data we collected was complete and accurate. 
+  </p>
+
+  <p>
+    For me, this project captures an important part of applied research and human-computer interaction. Building easy-to-use, flexible tools supports rigorous experimental work.
+  </p>
+</div>
+
 
       <div class="section">
         <h2>Skills reflected</h2>
