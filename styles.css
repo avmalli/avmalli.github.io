@@ -338,3 +338,36 @@ footer{
   text-align: center;
 }
 
+/* Artifact grid */
+
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.artifact-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.artifact-caption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Stack on small screens */
+@media (max-width: 700px) {
+  .artifact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
