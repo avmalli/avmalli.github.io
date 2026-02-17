@@ -1,1 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Olfactometer Software &amp; System Refinement | Amritha Mallikarjun</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <div class="name">Amritha Mallikarjun, Ph.D.</div>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../cv.html">CV</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Olfactometer software &amp; system refinement</h1>
+      <p class="subhead">
+        I led a rapid, iterative redesign of research-grade control software into a tool that non-expert trainers could run reliably
+        in high-tempo studies—without crashes, missing data, or fragile “only works if you click the right thing” workflows.
+      </p>
+
+      <div class="section">
+        <h2>Context</h2>
+        <p>
+          We use portable, automated olfactometers to run controlled canine olfaction experiments. The physical devices were built
+          by collaborators at Texas Tech, and we received an initial codebase intended for expert research users. The system itself is
+          powerful—computer-controlled odor presentation, sensor-based response capture, and automated trial structure—but the first
+          version of the software assumed perfect inputs and would fail hard when real users did normal things: skipping a field,
+          selecting an unexpected option, or running an edge-case trial sequence.
+        </p>
+        <p class="note">
+          Reference system background: an automated canine line-up built around microcontroller-controlled valves, Python control software,
+          and automated CSV output. :contentReference[oaicite:0]{index=0}
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Problem</h2>
+        <ul class="publist">
+          <li class="pub">
+            <p class="citation">
+              <strong>Fragility:</strong> The program crashed on common input errors (e.g., starting a lineup with no odor selected; selecting a dog name
+              not present in the backend list).
+            </p>
+          </li>
+          <li class="pub">
+            <p class="citation">
+              <strong>Usability gap:</strong> Trainers needed clear “what do I do next” affordances, time cues, and a way to adjust settings mid-run
+              without restarting the whole program.
+            </p>
+          </li>
+          <li class="pub">
+            <p class="citation">
+              <strong>Operational risk:</strong> In real data collection, failures don’t just waste time—they can invalidate sessions, create missingness,
+              and introduce inconsistencies across experimenters.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>My role</h2>
+        <p>
+          I owned the end-to-end improvement cycle: I identified failure points through hands-on use and direct observation of trainer workflows,
+          redesigned both backend and UI behaviors, and implemented changes under tight turnaround so the team could keep running studies.
+          Many fixes were sequential: solving one pain point often required refactoring upstream assumptions so the next feature could be added safely.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>What I built</h2>
+
+        <p class="note">Selected examples (mix of reliability work, UX improvements, and data pipeline engineering):</p>
+
+        <ul class="publist">
+          <li class="pub">
+            <p class="citation">
+              <strong>Defensive input handling:</strong> Added validation and guardrails so common mistakes produced helpful feedback instead of a crash
+              (e.g., blocking “start trial” when required fields are missing; handling unexpected dog/odor values gracefully).
+            </p>
+          </li>
+
+          <li class="pub">
+            <p class="citation">
+              <strong>Trainer-facing time visibility:</strong> Added an in-trial timer so trainers could pace behavior shaping and understand the session state
+              at a glance.
+            </p>
+          </li>
+
+          <li class="pub">
+            <p class="citation">
+              <strong>Settings without restarting:</strong> Implemented a “change settings” pathway so trainers could correct configuration errors or adjust parameters
+              between trials without closing and reopening the program.
+            </p>
+          </li>
+
+          <li class="pub">
+            <p class="citation">
+              <strong>Streamlined data capture and upload:</strong> Designed (and with a data science intern, implemented) a workflow that automatically packages
+              and uploads session data to Airtable, reducing manual file handling and improving consistency across experimenters.
+            </p>
+          </li>
+
+          <li class="pub">
+            <p class="citation">
+              <strong>Operational robustness:</strong> Focused on small, high-leverage features that reduce real-world failure: clearer prompts, safer defaults,
+              and predictable recovery behavior when something goes off-script.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Why this matters</h2>
+        <p>
+          This project sits at the intersection of research rigor and real-world usability. The core scientific goal is controlled stimulus delivery and
+          clean measurement; the operational reality is that studies depend on non-expert users running many sessions under time pressure. My work made
+          the system easier to run correctly, harder to run incorrectly, and more reliable as a data collection instrument—so that experimental conclusions
+          are supported by consistent, high-quality logs rather than “best effort” manual rescue.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Skills reflected</h2>
+        <div class="links">
+          <span class="note">Applied software engineering</span>
+          <span class="note">Human-centered design</span>
+          <span class="note">Reliability under messy inputs</span>
+          <span class="note">Experiment ops</span>
+          <span class="note">Data pipelines (Airtable)</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Media</h2>
+        <p class="note">
+          Optional: add a screenshot of the UI, a photo of the portable olfactometer setup, or a simple diagram of the session flow.
+          If you want, I can format an image grid that matches the site style once you drop in filenames.
+        </p>
+      </div>
+
+      <p class="note">
+        Back to <a href="../projects.html">Projects</a>.
+      </p>
+    </main>
+
+    <footer>
+      &copy; <span id="y"></span> Amritha Mallikarjun
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
