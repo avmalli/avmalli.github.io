@@ -6,10 +6,8 @@
   <title>Projects | Amritha Mallikarjun</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <div class="wrapper">
-
     <header>
       <div class="name">Amritha Mallikarjun, Ph.D.</div>
       <nav>
@@ -22,65 +20,103 @@
 
     <h1 class="page-title">Projects</h1>
     <p class="page-subhead">
-      Selected projects in human-computer interaction as well as research on perception and generalization under real-world constraints.
+      Empirical research on how people and learned systems acquire, generalize, and apply knowledge under real-world conditions &mdash; with a focus on experimental design, evaluation frameworks, and measurement validation.
     </p>
 
     <section class="project-grid">
 
-      <a class="project-card" href="projects/lung-transplant-decision-aid.html">
-        <h3>Lung Transplant Decision Aid</h3>
+      <!-- TODO: detail page does not exist yet -->
+      <a class="project-card" href="projects/cognitive-outcomes.html">
+        <h3>Measuring Cognitive Outcomes Under Real-World Conditions</h3>
         <p>
-          HCI capstone project designing a clinical decision support tool to help patients understand transplant tradeoffs and prepare for evaluation.
+          Decade of empirical work designing studies that measure how learning, attention, and recognition hold up when conditions diverge from training. Spans infants, monolingual and second-language adults, clinical populations (ADHD), and dogs as a comparative model. Methods include behavioral paradigms (headturn preference, flanker, task-switching, working memory), EEG/ERP, and longitudinal field studies.
         </p>
         <ul class="project-meta">
-          <li class="project-chip">HCI</li>
-          <li class="project-chip">Decision support</li>
-          <li class="project-chip">Usability</li>
+          <li class="project-chip">Experimental design</li>
+          <li class="project-chip">Cognitive outcomes</li>
+          <li class="project-chip">Behavioral measurement</li>
         </ul>
       </a>
 
-      <a class="project-card" href="projects/olfactometers.html">
-        <h3>Olfactometer Software &amp; System Refinement</h3>
+      <!-- TODO: detail page does not exist yet -->
+      <a class="project-card" href="projects/evaluation-frameworks.html">
+        <h3>Evaluation Frameworks for Learned Systems</h3>
         <p>
-          Improved experimental control code and operator workflows for automated olfactometers to increase reliability and reproducibility in behavioral testing.
+          Multi-year program designing evaluation systems for trained classifiers &mdash; in this case, biological detectors &mdash; including training-aid validation, candidate selection, generalization testing, and operational performance metrics. Five published or in-press papers and three federally funded grants. The framework generalizes: how do you tell whether a learned system will hold up when the test distribution diverges from training?
         </p>
         <ul class="project-meta">
-          <li class="project-chip">Python</li>
-          <li class="project-chip">Hardware integration</li>
-          <li class="project-chip">HCI</li>
-        </ul>
-      </a>
-
-      <a class="project-card" href="projects/biosensors.html">
-        <h3>Biosensors</h3>
-        <p>
-          Research on odor category formation given variable inputs, with translational implications for diagnostics and disease detection.
-        </p>
-        <ul class="project-meta">
-          <li class="project-chip">Category learning</li>
+          <li class="project-chip">Evaluation</li>
           <li class="project-chip">Generalization</li>
-          <li class="project-chip">Detection</li>
+          <li class="project-chip">Validation</li>
+        </ul>
+      </a>
+
+      <!-- TODO: detail page does not exist yet -->
+      <a class="project-card" href="projects/measurement-validation.html">
+        <h3>Inter-Rater Reliability &amp; Measurement Validation</h3>
+        <p>
+          Studies on observer agreement and rating reliability for behavioral and physiological measurements, including body condition scoring across 43 working explosives detection dogs (Christie et al., 2024) and perceptual rating accuracy for heat-related illness in dogs. The same methodological core that underlies rubric calibration, model-as-judge evaluation, and grader validation.
+        </p>
+        <ul class="project-meta">
+          <li class="project-chip">Measurement</li>
+          <li class="project-chip">Inter-rater reliability</li>
+          <li class="project-chip">Rubric design</li>
+        </ul>
+      </a>
+
+      <!-- TODO: detail page does not exist yet -->
+      <a class="project-card" href="projects/predictive-modeling.html">
+        <h3>Predictive Modeling of Behavioral Outcomes</h3>
+        <p>
+          Built and evaluated supervised machine learning models (XGBoost, gradient boosting) linking behavioral and physiological measurements to downstream outcomes, including a mentored project predicting working dog career trajectories from behavioral surveys. Focus on model fit, generalization, and stability under noisy real-world data.
+        </p>
+        <ul class="project-meta">
+          <li class="project-chip">Machine learning</li>
+          <li class="project-chip">Model evaluation</li>
+          <li class="project-chip">XGBoost</li>
         </ul>
       </a>
 
       <a class="project-card" href="projects/adverse-conditions.html">
         <h3>Perception Under Adverse Conditions</h3>
         <p>
-          How noise, degradation, and distractors affect perception.
+          Comparative studies of speech recognition under noise and signal degradation in humans and dogs. One key finding: dogs recognize their name in multitalker noise at signal-to-noise ratios where 12-month-old infants fail &mdash; disentangling auditory and attentional factors from language-specific knowledge. Connects to broader questions about what counts as &ldquo;the same input&rdquo; for a learned system.
         </p>
         <ul class="project-meta">
-          <li class="project-chip">Noise</li>
+          <li class="project-chip">Speech perception</li>
           <li class="project-chip">Signal degradation</li>
-          <li class="project-chip">Attention</li>
+          <li class="project-chip">Comparative cognition</li>
+        </ul>
+      </a>
+
+      <a class="project-card" href="projects/olfactometers.html">
+        <h3>Olfactometer Software &amp; Data Pipeline</h3>
+        <p>
+          Redesigned research-grade control software for portable automated olfactometers. Rewrote validation logic and backend safeguards, added defensive input handling and mid-session recovery, and built automated Airtable upload workflows that standardize outputs for downstream statistical analysis.
+        </p>
+        <ul class="project-meta">
+          <li class="project-chip">Python</li>
+          <li class="project-chip">Pipeline engineering</li>
+          <li class="project-chip">Hardware integration</li>
         </ul>
       </a>
 
     </section>
 
+    <!-- Smaller mention block below the grid -->
+    <div class="section">
+      <h2>In progress</h2>
+      <div class="sel-item">
+        <p class="sel-citation">Teaching AI literacy in undergraduate research methods</p>
+        <p class="sel-blurb">
+          As part of a Behavioral Neuroscience syllabus design, developed a structured assignment in which students critically evaluate AI-generated literature syntheses against primary sources. The aim is to build skills in detecting overreliance, shallow fluency, and unproductive cognitive offloading &mdash; a small applied example of the broader question of how AI use shapes learning and reasoning.
+        </p>
+      </div>
+    </div>
+
     <footer>
       © 2026 Amritha Mallikarjun
     </footer>
-
   </div>
 </body>
 </html>
