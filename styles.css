@@ -58,7 +58,7 @@ h1{
 }
 
 .subhead{
-  margin:0 0 28px;
+  margin:0 0 16px;
   color:var(--muted);
   max-width:90ch;
 }
@@ -83,6 +83,87 @@ h1{
   margin:0 0 12px;
   color:var(--muted);
   font-size:13px;
+}
+
+.note a{
+  color:var(--accent);
+  text-decoration:none;
+}
+.note a:hover{text-decoration:underline;}
+
+/* ---------- Homepage intro: text + photo ---------- */
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr;
+  gap:32px;
+  align-items:start;
+  margin-bottom:32px;
+}
+
+.intro-text h1{
+  margin-bottom:16px;
+}
+
+.intro-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:12px;
+  border:1px solid var(--line);
+}
+
+.intro-photo .photo-caption{
+  margin-top:10px;
+  font-size:13px;
+  color:var(--muted);
+  text-align:center;
+}
+
+@media (max-width:780px){
+  .intro-grid{
+    grid-template-columns:1fr;
+  }
+  .intro-photo{
+    max-width:340px;
+    margin:0 auto;
+  }
+}
+
+/* ---------- Recent list ---------- */
+
+.recent-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.recent-list li{
+  padding:10px 0;
+  border-top:1px solid var(--line);
+  color:var(--text);
+  font-size:14.5px;
+  line-height:1.55;
+}
+
+.recent-list li:first-child{border-top:none;}
+
+.recent-date{
+  display:inline-block;
+  min-width:72px;
+  font-variant-numeric:tabular-nums;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.recent-type{
+  display:inline-block;
+  min-width:56px;
+  font-size:11.5px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--accent);
+  margin-right:8px;
 }
 
 /* Selected publications */
@@ -369,5 +450,3 @@ footer{
     grid-template-columns: 1fr;
   }
 }
-
-
