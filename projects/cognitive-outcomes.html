@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Measuring Cognitive Outcomes Under Real-World Conditions | Amritha Mallikarjun</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css" />
 </head>
+
 <body>
   <div class="wrapper">
+
     <header>
       <div class="name">Amritha Mallikarjun, Ph.D.</div>
       <nav>
@@ -18,127 +20,129 @@
       </nav>
     </header>
 
-    <h1 class="page-title">Measuring Cognitive Outcomes Under Real-World Conditions</h1>
-    <p class="page-subhead">
-      A decade of empirical work on how learning, attention, and recognition hold up when test conditions diverge from training. Across infants, monolingual and second-language adults, clinical populations, and dogs as a comparative model.
-    </p>
-
-    <div class="section">
-      <h2>Overview</h2>
-      <p>
-  Controlled experiments tell us how learners do under ideal conditions. They tell us much less about what happens when the conditions get noisier, more variable, or otherwise unlike training. The studies below approach that gap from several directions. Some manipulate the input: noise, signal degradation, mixed-language streams, distorted speech. Some vary the listener: infants, adults, ADHD, second-language learners, dogs. All ask what kind of representation supports recognition when the surface form changes. The methodological core is shared across populations: experimental design, behavioral measurement, mixed-effects modeling.
+    <main>
+      <h1>Measuring cognitive outcomes under real-world conditions</h1>
+      <p class="subhead">
+        I'm interested in what learners actually do when real-life conditions diverge from training.
+        If the novel test input is noisier, more variable, or otherwise unlike what a learner has seen
+        before, what kind of representation supports recognition, and how do we measure it?
       </p>
-      <p>
-        These studies have clear translation to work in AI. Evaluating whether an AI system improves human reasoning, whether a tutoring system supports durable learning, or whether a model-as-judge framework produces reliable ratings, all rely on similar questions to those asked in this research. What outcome should be measured? What cues does the learner use to acquire and categorize information? How do you tell when performance reflects genuine generalization versus surface-level pattern matching? And how do you design controlled comparisons in messy real-world settings? 
+
+      <div class="section">
+        <h2>The core question</h2>
+        <p>
+          What does a learner's performance under shifted conditions tell us about the
+          representations they're using? How do we design methodologically rigorous studies that distinguish
+          true generalization from spurious pattern matching?
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Prior experience as a feature attribution problem</h2>
+        <p>
+          The same input can produce different learning outcomes depending on what each
+          learner treats as informative. In an artificial-language study I completed as an honors thesis in 2014 with Mandarin
+          and English speakers, both groups heard identical streams of disyllabic nonsense
+          words paired with tone contours. Mandarin speakers segmented words better when
+          the tones were consistent than when they were random. English speakers performed
+          identically across conditions. They were not using the tonal cue at all.
+        </p>
+
+        <p>
+          This is a feature attribution problem, in which we attempt to identify which specific input
+          dimension a learner is using to solve a task. Tsui et al. (2021), building on my honors thesis, extends
+          the same logic to infants segmenting two interleaved artificial languages, where
+          phonetic cues determine whether the streams can be tracked separately. Two later
+          studies I conducted in graduate school show experience-driven divergence in domestic dogs: dogs distinguish
+          their name from a vowel-mispronounced version but not a consonant-mispronounced
+          version, and dogs from English- versus Spanish-speaking households produce
+          opposite preference patterns to the same fairy tales.
+        </p>
+
+        <div class="links">
+          <a href="../mallikarjun-shroads-newman-linguistic-experience.pdf" target="_blank" rel="noopener">Consonant bias paper</a>
+          <a href="../mallikarjun-shroads-newman-language-preference.pdf" target="_blank" rel="noopener">Language preference paper</a>
+          <a href="../tsui-et-al-2020.pdf" target="_blank" rel="noopener">Tsui et al. (2021)</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Translation to applied learning settings</h2>
+        <p>
+          Mallikarjun, Newman, and Novick (2017) takes the same line of evidence into
+          K-12 ELL practice. Common policies, particularly English-only immersion, rest
+          on assumptions psycholinguistic evidence does not support: bilingual learners
+          cannot "deactivate" their second language, cognates and partial cognates are
+          coactivated automatically, and mixed-language instruction does not appear to
+          harm learning outcomes and may actually help them.
+        </p>
+
+        <p>
+          Most existing policy guidance treats the bilingual learner as a monolingual
+          with a delay. The paper argues for the opposite framing: the learner's
+          existing language is a resource the learning environment can either exploit
+          or actively work against. Designing for one or the other is a choice, and
+          most current designs make it without realizing they're making it.
+        </p>
+
+        <div class="links">
+          <a href="../mallikarjun-newman-novick-2017.pdf" target="_blank" rel="noopener">ELL paper</a>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Cognitive control and language processing in adults</h2>
+        <p>
+          Two currently unpublished studies conducted at UMD extend the framework to adult populations. The first
+          tests adults with and without ADHD on past-tense generation, task-switching,
+          and working memory, treating stimulant medication as a within-subjects
+          covariate rather than ignoring it.
+        </p>
+
+        <p>
+          The second is an EEG study completed in graduate school examining masked argument-structure priming. 
+          Native English speakers read garden-path sentences
+          with a 33ms masked prime preceding the matrix verb, and primes varied continuously
+          in their DO/SC bias rather than splitting into two categorical conditions. I built
+          the EEGlab preprocessing pipeline and ran regression-based ERP analyses in R.
+          The planned interaction was not significant, but visual inspection at the target
+          verb showed earlier N400 peaks for repetition primes and larger P600 amplitudes
+          for argument-structure primes, indicating that 33ms primes were being processed
+          even though participants reported only seeing flashes.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>What this work shows</h2>
+        <ul style="margin:0; padding-left:18px;">
+          <li>The same input produces different outcomes depending on the learner's history. Identifying which feature each learner is using requires deliberate experimental design.</li>
+          <li>Paired-group designs, controlled stimulus manipulations, and continuous-predictor analyses give more leverage for distinguishing real learning from surface pattern-matching than two-condition contrasts do.</li>
+          <li>Null results that emerge from a well-designed study are diagnostic: they tell you something about the construct, not just the data.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Broader relevance</h2>
+        <p>
+          The same problem sits at the center of evaluating learned systems. A model that
+          performs well on its evaluation distribution may or may not be using the features
+          a designer intended, and may or may not generalize when the input shifts. The
+          studies on this page are exercises in that measurement: paired-group designs,
+          controlled stimulus manipulations, and analyses built to identify which input
+          dimension a learner is actually using.
+        </p>
+      </div>
+
+      <p class="note">
+        Back to <a href="../projects.html">Projects</a>.
       </p>
-    </div>
 
-    <div class="section">
-      <h2>How prior experience shapes perception</h2>
-
-      <div class="sel-item">
-        <p class="sel-citation">
-          Mallikarjun, A., Newman, R. S., &amp; Novick, J. M. (2017). Exploiting the interconnected lexicon: Bootstrapping English language learning in young Spanish speakers. <em>Translational Issues in Psychological Science</em>, 3(1), 34–47.
-        </p>
-        <p class="sel-blurb">
-          A review and synthesis paper discussing how common K-12 ELL practices, particularly English-only immersion, rest on assumptions that psycholinguistic evidence does not support. Bilingual learners cannot "deactivate" their second language, even in monolingual settings; cognates and partial cognates are coactivated automatically. Mixed-language instruction does not appear to harm learning outcomes and may actually help them, especially for unbalanced bilinguals like the Spanish-speaking ELL population in U.S. schools.
-        </p>
-        <p class="sel-blurb">
-          The piece demonstrates translation of controlled cognitive research into recommendations for the design of learning environments.
-        </p>
-        <div class="links">
-          <a href="http://dx.doi.org/10.1037/tps0000105" target="_blank" rel="noopener">DOI</a>
-          <a href="../mallikarjun-newman-novick-2017.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-
-      <div class="sel-item">
-        <p class="sel-citation">Statistical learning of tonal cues in Mandarin and English speakers (CMU honors thesis, 2014)</p>
-        <p class="sel-blurb">
-          Mandarin speakers and non-tonal-language speakers heard a five-minute artificial speech stream of disyllabic nonsense words. In one condition, each word was consistently paired with a Mandarin tone contour. In the other, the tone was randomly reassigned every time the word appeared. In a forced-choice test against part-words, Mandarin speakers performed better when tones were consistent (M = 0.84) than when they were inconsistent (M = 0.64). Non-tonal-language speakers performed identically across conditions (0.71 consistent, 0.76 inconsistent). They were not using the tonal cue at all.
-        </p>
-        <p class="sel-blurb">
-          The result shows that statistical learning operates over internal representations shaped by prior experience, not over the raw acoustic signal. The same input produced different learning outcomes depending on what each group of listeners treated as informative. The methodological move is one of feature attribution: identifying which input dimension a learner is actually using to solve a task.
-        </p>
-        <p class="sel-blurb">
-          Unpublished honors thesis. Conceptual foundation for Tsui et al. (2021), described below.
-        </p>
-      </div>
-
-      <div class="sel-item">
-        <p class="sel-citation">
-          Tsui, A. S. M., Erickson, L. C., Mallikarjun, A., Thiessen, E. D., &amp; Fennell, C. T. (2021). Dual language statistical word segmentation in infancy: Simulating a language-mixing bilingual environment. <em>Developmental Science</em>, 24(3), e13050.
-        </p>
-        <p class="sel-blurb">
-          This study tested whether infants can segment words from two interleaved artificial language streams with overlapping syllables. We added phonetic cues that distinguished one language from the other. Infants who heard the cued streams successfully segmented words. Without the cues, they did not. The finding extends the tone-language work to early development: when statistical structure alone is ambiguous, learners use available perceptual cues to track competing distributions.
-        </p>
-        <div class="links">
-          <a href="https://doi.org/10.1111/desc.13050" target="_blank" rel="noopener">DOI</a>
-          <a href="../tsui-et-al-2020.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-
-      <div class="sel-item">
-        <p class="sel-citation">
-          Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2021). The role of linguistic experience in the development of the consonant bias. <em>Animal Cognition</em>, 24(3), 419–431.
-        </p>
-        <p class="sel-blurb">
-          The "consonant bias" is the tendency in older infants and adults to weight consonants more than vowels when distinguishing words. Younger infants show the opposite pattern, the "vowel bias." We tested whether dogs, who have minimal vocabulary but extensive exposure to human speech, develop the consonant bias. They do not. Dogs distinguished their name from a vowel-mispronounced version, but treated a consonant-mispronounced version as equivalent to their name. The result suggests the consonant bias may require something more than passive speech exposure: vocabulary growth, or human-specific learning mechanisms, or both.
-        </p>
-        <div class="links">
-          <a href="https://doi.org/10.1007/s10071-020-01436-6" target="_blank" rel="noopener">DOI</a>
-          <a href="../mallikarjun-shroads-newman-linguistic-experience.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-
-      <div class="sel-item">
-        <p class="sel-citation">
-          Mallikarjun, A., Shroads, E., &amp; Newman, R. S. (2023). Language preference in the domestic dog (<em>Canis familiaris</em>). <em>Animal Cognition</em>, 26(2), 451–463.
-        </p>
-        <p class="sel-blurb">
-          Dogs from English-speaking households and Spanish-speaking households heard fairy tales read in both languages. Both groups successfully discriminated between English and Spanish, listening for systematically different durations to the two. The direction of the preference depended on the dog's language background: Spanish-hearing dogs listened longer to English, and English-hearing dogs listened longer to Spanish. Same input, opposite responses, driven by the listener's history. The pattern is a novelty preference rather than a familiarity preference, but the broader point holds: prior linguistic experience shaped how the input was processed.
-        </p>
-        <div class="links">
-          <a href="https://doi.org/10.1007/s10071-022-01683-9" target="_blank" rel="noopener">DOI</a>
-          <a href="../mallikarjun-shroads-newman-language-preference.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Cognitive control and language processing in adults</h2>
-      <p class="note">Two completed UMD studies that demonstrate methodological range across populations and paradigms.</p>
-
-      <div class="sel-item">
-        <p class="sel-citation">Cognitive control and morphological processing in adults with ADHD</p>
-        <p class="sel-blurb">
-          Adults with and without ADHD completed three tasks: past-tense generation (a morphological processing task), a shape-sorting task-switching measure, and a working memory task tracking shape trajectories. Participants on stimulant medication recorded whether and when they had taken it relative to testing.
-        </p>
-        <p class="sel-blurb">
-          Most ADHD research focuses on children. Existing adult work has produced inconsistent results in cognitive tasks, and prior studies have not corrected for the effects of prescribed stimulants. The aim was to assess whether known childhood patterns persist in adulthood, and whether medication state changes performance on the linguistic tasks specifically. The design treats medication as a within-subjects covariate rather than ignoring it, which is the standard the existing literature mostly does not meet.
-        </p>
-      </div>
-
-      <div class="sel-item">
-        <p class="sel-citation">P600 under the effect of argument structure priming (UMD coursework project, with N. Huang, N. B. Karataş, and C-H. Liao)</p>
-        <p class="sel-blurb">
-          This study tested whether masked priming of a verb's argument structure modulates the P600, an ERP component linked to syntactic reanalysis. Native English speakers read garden-path sentences containing direct-object-bias verbs followed by sentential complements. A 33ms masked prime preceded each matrix verb. Primes varied continuously in their own DO/SC bias rather than splitting into two categorical conditions, which gives more statistical leverage when the underlying construct is graded.
-        </p>
-        <p class="sel-blurb">
-          I built the preprocessing and analysis pipeline in EEGlab. Continuous data were epoched from -100 to 800ms around target and disambiguating verbs, automatic artifact rejection handled blinks and horizontal eye movements (16% rejection rate), and a 40Hz lowpass filter was applied. Regression-based ERP analyses in R regressed voltage in the 600 to 798ms window on prime bias, garden-path verb bias, and their interaction, both at electrode PZ and across the whole scalp.
-        </p>
-        <p class="sel-blurb">
-          The planned interaction at the disambiguating verb was not significant. At the target verb, visual inspection showed earlier N400 peaks for repetition primes and larger P600 amplitudes for argument-structure primes, indicating that 33ms primes were being processed even though participants reported only seeing flashes. The disambiguating-verb effect may have been smeared by averaging across a wide range of prime biases; a follow-up restricting to strongly biased primes would test that account directly.
-        </p>
-        <p class="sel-blurb">
-          The project demonstrates end-to-end ERP work: stimulus design grounded in a specific theoretical contrast, signal-processing pipeline construction, and regression-based analysis of high-dimensional neural data, including diagnosing why a planned effect did not emerge.
-        </p>
-      </div>
-    </div>
+    </main>
 
     <footer>
       © 2026 Amritha Mallikarjun
     </footer>
+
   </div>
 </body>
 </html>
