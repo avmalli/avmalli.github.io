@@ -24,9 +24,12 @@
     </p>
 
     <div class="section">
-      <h2>The question</h2>
+      <h2>Overview</h2>
       <p>
-        Controlled experiments tell us how learners do under ideal conditions. They tell us much less about what happens when the conditions get noisier, more variable, or otherwise unlike training. The studies below approach that gap from several directions. Some manipulate the input: noise, signal degradation, mixed-language streams, distorted speech. Some vary the listener: infants, adults, ADHD, second-language learners, dogs. All ask what kind of representation supports recognition when the surface form changes. The methodological core is shared across populations: experimental design, behavioral measurement, mixed-effects modeling.
+  Controlled experiments tell us how learners do under ideal conditions. They tell us much less about what happens when the conditions get noisier, more variable, or otherwise unlike training. The studies below approach that gap from several directions. Some manipulate the input: noise, signal degradation, mixed-language streams, distorted speech. Some vary the listener: infants, adults, ADHD, second-language learners, dogs. All ask what kind of representation supports recognition when the surface form changes. The methodological core is shared across populations: experimental design, behavioral measurement, mixed-effects modeling.
+      </p>
+      <p>
+        These studies have clear translation to work in AI. Evaluating whether an AI system improves human reasoning, whether a tutoring system supports durable learning, or whether a model-as-judge framework produces reliable ratings, all rely on similar questions to those asked in this research. What outcome should be measured? What cues does the learner use to acquire and categorize information? How do you tell when performance reflects genuine generalization versus surface-level pattern matching? And how do you design controlled comparisons in messy real-world settings? 
       </p>
     </div>
 
@@ -34,12 +37,28 @@
       <h2>How prior experience shapes perception</h2>
 
       <div class="sel-item">
+        <p class="sel-citation">
+          Mallikarjun, A., Newman, R. S., &amp; Novick, J. M. (2017). Exploiting the interconnected lexicon: Bootstrapping English language learning in young Spanish speakers. <em>Translational Issues in Psychological Science</em>, 3(1), 34–47.
+        </p>
+        <p class="sel-blurb">
+          A review and synthesis paper discussing how common K-12 ELL practices, particularly English-only immersion, rest on assumptions that psycholinguistic evidence does not support. Bilingual learners cannot "deactivate" their second language, even in monolingual settings; cognates and partial cognates are coactivated automatically. Mixed-language instruction does not appear to harm learning outcomes and may actually help them, especially for unbalanced bilinguals like the Spanish-speaking ELL population in U.S. schools.
+        </p>
+        <p class="sel-blurb">
+          The piece demonstrates translation of controlled cognitive research into recommendations for the design of learning environments.
+        </p>
+        <div class="links">
+          <a href="http://dx.doi.org/10.1037/tps0000105" target="_blank" rel="noopener">DOI</a>
+          <a href="../mallikarjun-newman-novick-2017.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
+      </div>
+
+      <div class="sel-item">
         <p class="sel-citation">Statistical learning of tonal cues in Mandarin and English speakers (CMU honors thesis, 2014)</p>
         <p class="sel-blurb">
           Mandarin speakers and non-tonal-language speakers heard a five-minute artificial speech stream of disyllabic nonsense words. In one condition, each word was consistently paired with a Mandarin tone contour. In the other, the tone was randomly reassigned every time the word appeared. In a forced-choice test against part-words, Mandarin speakers performed better when tones were consistent (M = 0.84) than when they were inconsistent (M = 0.64). Non-tonal-language speakers performed identically across conditions (0.71 consistent, 0.76 inconsistent). They were not using the tonal cue at all.
         </p>
         <p class="sel-blurb">
-          The result shows that statistical learning operates over internal representations shaped by prior experience, not over the raw acoustic signal. The same input produced different learning outcomes depending on what the listener treated as informative.
+          The result shows that statistical learning operates over internal representations shaped by prior experience, not over the raw acoustic signal. The same input produced different learning outcomes depending on what each group of listeners treated as informative. The methodological move is one of feature attribution: identifying which input dimension a learner is actually using to solve a task.
         </p>
         <p class="sel-blurb">
           Unpublished honors thesis. Conceptual foundation for Tsui et al. (2021), described below.
@@ -51,7 +70,7 @@
           Tsui, A. S. M., Erickson, L. C., Mallikarjun, A., Thiessen, E. D., &amp; Fennell, C. T. (2021). Dual language statistical word segmentation in infancy: Simulating a language-mixing bilingual environment. <em>Developmental Science</em>, 24(3), e13050.
         </p>
         <p class="sel-blurb">
-          This study tested whether infants can segment words from two interleaved artificial language streams with overlapping syllables. We added phonetic cues that distinguished one language from the other. Infants who heard the cued streams successfully segmented words. Without the cues, they did not. The finding extends the tone-language work to early development: when statistical structure is ambiguous, learners use available perceptual cues to track competing distributions.
+          This study tested whether infants can segment words from two interleaved artificial language streams with overlapping syllables. We added phonetic cues that distinguished one language from the other. Infants who heard the cued streams successfully segmented words. Without the cues, they did not. The finding extends the tone-language work to early development: when statistical structure alone is ambiguous, learners use available perceptual cues to track competing distributions.
         </p>
         <div class="links">
           <a href="https://doi.org/10.1111/desc.13050" target="_blank" rel="noopener">DOI</a>
@@ -88,7 +107,7 @@
 
     <div class="section">
       <h2>Cognitive control and language processing in adults</h2>
-      <p class="note">Two unpublished UMD studies. Both completed; not published due to methodological limitations and null effects, respectively.</p>
+      <p class="note">Two completed UMD studies that demonstrate methodological range across populations and paradigms.</p>
 
       <div class="sel-item">
         <p class="sel-citation">Cognitive control and morphological processing in adults with ADHD</p>
@@ -96,38 +115,24 @@
           Adults with and without ADHD completed three tasks: past-tense generation (a morphological processing task), a shape-sorting task-switching measure, and a working memory task tracking shape trajectories. Participants on stimulant medication recorded whether and when they had taken it relative to testing.
         </p>
         <p class="sel-blurb">
-          Most ADHD research focuses on children. Existing adult work has produced inconsistent results in cognitive tasks, and prior studies have not corrected for the effects of prescribed stimulants. The aim was to assess whether known childhood patterns persist in adulthood, and whether medication state changes performance on the linguistic tasks specifically.
+          Most ADHD research focuses on children. Existing adult work has produced inconsistent results in cognitive tasks, and prior studies have not corrected for the effects of prescribed stimulants. The aim was to assess whether known childhood patterns persist in adulthood, and whether medication state changes performance on the linguistic tasks specifically. The design treats medication as a within-subjects covariate rather than ignoring it, which is the standard the existing literature mostly does not meet.
         </p>
       </div>
 
       <div class="sel-item">
-        <p class="sel-citation">Top-down processing in second-language listening</p>
+        <p class="sel-citation">P600 under the effect of argument structure priming (UMD coursework project, with N. Huang, N. B. Karataş, and C-H. Liao)</p>
         <p class="sel-blurb">
-          Second-language learners typically struggle to listen in noise and to fill in missing speech. The mechanism behind this is unclear. One possibility is that they fail to use top-down information from sentence context the way native listeners do.
-        </p>
-        <p class="sel-blurb">
-          The study used a phoneme-restoration paradigm. Native English speakers and L2 learners heard sentences with intermittent gaps that were either silent or filled with noise. Filled gaps usually make sentences easier to understand because listeners restore the missing speech using top-down context. The question was whether L2 learners would show this restoration effect at all. The design also included a parallel listening-in-noise task to replicate the standard L2 disadvantage, and cognitive control measures to rule out executive function as a confound.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Translation: from psycholinguistic findings to classroom practice</h2>
-
-      <div class="sel-item">
-        <p class="sel-citation">
-          Mallikarjun, A., Newman, R. S., &amp; Novick, J. M. (2017). Exploiting the interconnected lexicon: Bootstrapping English language learning in young Spanish speakers. <em>Translational Issues in Psychological Science</em>, 3(1), 34–47.
+          This study tested whether masked priming of a verb's argument structure modulates the P600, an ERP component linked to syntactic reanalysis. Native English speakers read garden-path sentences containing direct-object-bias verbs followed by sentential complements. A 33ms masked prime preceded each matrix verb. Primes varied continuously in their own DO/SC bias rather than splitting into two categorical conditions, which gives more statistical leverage when the underlying construct is graded.
         </p>
         <p class="sel-blurb">
-          A review and synthesis paper, not primary empirical work. The piece argues that common K-12 ELL practices, particularly English-only immersion, rest on assumptions that psycholinguistic evidence does not support. Bilingual learners cannot deactivate their first language even in monolingual settings. Cognates and partial cognates are coactivated automatically. Mixed-language instruction does not appear to harm learning outcomes and may help them, especially for unbalanced bilinguals like the Spanish-speaking ELL population in U.S. schools.
+          I built the preprocessing and analysis pipeline in EEGlab. Continuous data were epoched from -100 to 800ms around target and disambiguating verbs, automatic artifact rejection handled blinks and horizontal eye movements (16% rejection rate), and a 40Hz lowpass filter was applied. Regression-based ERP analyses in R regressed voltage in the 600 to 798ms window on prime bias, garden-path verb bias, and their interaction, both at electrode PZ and across the whole scalp.
         </p>
         <p class="sel-blurb">
-          The piece is the clearest example on this page of translating findings from controlled cognitive research into recommendations for how learning environments are designed.
+          The planned interaction at the disambiguating verb was not significant. At the target verb, visual inspection showed earlier N400 peaks for repetition primes and larger P600 amplitudes for argument-structure primes, indicating that 33ms primes were being processed even though participants reported only seeing flashes. The disambiguating-verb effect may have been smeared by averaging across a wide range of prime biases; a follow-up restricting to strongly biased primes would test that account directly.
         </p>
-        <div class="links">
-          <a href="http://dx.doi.org/10.1037/tps0000105" target="_blank" rel="noopener">DOI</a>
-          <a href="../mallikarjun-newman-novick-2017.pdf" target="_blank" rel="noopener">PDF</a>
-        </div>
+        <p class="sel-blurb">
+          The project demonstrates end-to-end ERP work: stimulus design grounded in a specific theoretical contrast, signal-processing pipeline construction, and regression-based analysis of high-dimensional neural data, including diagnosing why a planned effect did not emerge.
+        </p>
       </div>
     </div>
 
