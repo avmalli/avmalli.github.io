@@ -24,41 +24,37 @@
     <main>
       <h1>Evaluation frameworks for learned systems</h1>
       <p class="subhead">
-        I'm interested in how you evaluate a trained detector before you deploy it.
-        The detector in this work is a working dog trained to identify chronic wasting
-        disease in white-tailed deer feces. The questions are the same ones that come
-        up for any trained classifier: how do you build a safe training set, how do
-        you test for generalization, and how do you tell whether the system is using
-        the features you think it is?
+        I'm interested trained detectors can be evaluated and stress-tested prior to deployment.
+        The detectors in this project is a set of working dogs trained to identify chronic wasting
+        disease in white-tailed deer feces. However, the questions and methodology are very similar to those asked about
+        any trained classifier: how can we build a safe training set, test for optimal generalization to real-world circumstances,
+        and tell whether the system is using the features we think it is using?
       </p>
 
       <div class="section">
         <h2>The core question</h2>
         <p>
-          What evidence do you need to trust a trained detector outside its training
-          conditions, and what do you do when that evidence says the system isn't
-          using the features you assumed it was?
+          How do we rigorously evaluate trained detectors outside their training
+          parameters? 
         </p>
       </div>
 
       <div class="section">
-        <h2>Substrate validation: can a safer training aid carry the signal?</h2>
+        <h2>Substrate validation: to what extent do safer training aids align with the true material?</h2>
         <p>
-          CWD-positive deer feces are a biohazard. Prions bind to soil, persist for
+          CWD-positive deer feces are a biohazard; prions bind to soil, persist for
           years, and survive routine decontamination. Training dogs on real fecal
-          matter risks contaminating every environment the training takes place in.
-          So the first question I worked on was whether a safer training substrate
-          can stand in for the real material without changing what the dog learns.
+          matter from CWD-positive deer risks contaminating every environment in which the training takes place.
+          The first question I examined was the extent to which a safer training substrate
+          can stand in for the real material without changing what the dog learns and their future operational success. 
         </p>
 
         <p>
           Cotton balls incubated in the headspace above fecal samples adsorb the
           volatile organic compounds (VOCs) the dogs are detecting, without ever
-          contacting the feces themselves. I trained five dogs on cotton-ball aids
-          prepared this way and tested them on novel aids and on real fecal matter.
-          Dogs reached 73% sensitivity and 77% specificity on novel cotton aids,
-          with no significant difference between cotton balls and the denser cotton
-          rolls preferred for field use.
+          contacting the feces themselves; thus, ,there is no prion risk. 
+          Dogs trained on cotton aids reached 73% sensitivity and 77% specificity on novel cotton aids 
+          incubated with never-before-seen fecal samples.
         </p>
 
         <div class="links">
@@ -69,22 +65,29 @@
       <div class="section">
         <h2>Generalization across the training-to-deployment gap</h2>
         <p>
-          The cotton aid isn't the operational target. Dogs deployed in the field
+          However, the cotton aid isn't the operational target. Operational dogs deployed in the field
           will encounter real deer feces, in pile sizes that vary by an order of
-          magnitude. Two follow-up studies asked whether dogs trained on the safer
-          substrate generalize to the operational one.
+          magnitude, and must alert on feces from CWD-positive deer.
+          Two follow-up studies asked about the extent to which dogs trained on the safer
+          substrate generalize to more operational odors.
         </p>
 
         <p>
-          From cotton aid to real feces, sensitivity dropped from 73% to 50%.
+          From cotton aid incubated with 2g of fecal matter to the 2g of fecal matter itself, sensitivity dropped from 73% to 50%.
           Specificity held at 90%. Dogs recognized something in common across the
           two substrates, but the fecal samples sat at the edge of their learned
-          concept rather than at its center. From 1-2g cotton aids to 22g cotton
-          aids, the result was sharper: dogs didn't spontaneously generalize at all.
+          concept rather than at its center. 
+        </p>
+
+          <p>
+           However, deer typically produce fecal piles weighing about 22g. As such, we asked about dogs' generalization
+            from the small-quantity odor to a larger quantity odor, using cotton aids.
+            From cotton aids incubated with 1-2 g of fecal matter to aids incubated with 22g, 
+            the result was stark: dogs didn't spontaneously generalize at all.
           Performance on the larger-volume samples was indistinguishable from chance
           until I gave them three short training sessions on the new volume, at
-          which point discrimination recovered. Same target, same substrate, only
-          the sample mass changed, and the trained representation didn't transfer.
+          which point discrimination partially recovered. Even with the same fundamental target in the same substrate with only
+          the sample mass changed, the trained representation didn't transfer.
         </p>
 
         <div class="links">
@@ -115,7 +118,7 @@
         </p>
 
         <div class="links">
-          <a href="#" target="_blank" rel="noopener">Prion 2023 paper</a>
+          <a href="#" target="/mallikarjun-swartz-kane-2023.pdf" rel="noopener">Mallikarjun et al. 2023 paper</a>
         </div>
       </div>
 
@@ -154,8 +157,8 @@
       <div class="section">
         <h2>What this work shows</h2>
         <ul style="margin:0; padding-left:18px;">
-          <li>Substrate, generalization, and feature attribution are separable questions, and they need separate experimental designs.</li>
           <li>The trained distribution sets the generalization range. Shifts in substrate, sample volume, or deployment context all degrade performance.</li>
+          <li>Increased variety in training increases the category boundary, thus improving generalization in test scenarios.</li>
           <li>GC-MS feature importance doesn't necessarily describe what the dog is using. An ablation can disagree with the chemistry, and the disagreement is informative.</li>
           <li>When humans interpret a detector's output, their agreement rate with the system is its own measurement question.</li>
         </ul>
