@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,8 +33,7 @@
       <div class="section">
         <h2>The core question</h2>
         <p>
-          How do we rigorously evaluate trained detectors outside their training
-          parameters? 
+    What happens when a trained detector meets a sample it wasn't trained on, and how do you find out before deployment?
         </p>
       </div>
 
@@ -58,7 +56,7 @@
         </p>
 
         <div class="links">
-          <a href="../mallikarjun-et-al-2025.pdf" target="_blank" rel="noopener">Mallikarjun et al. 2025</a>
+          <a href="../mallikarjun-et-al-2025.pdf" target="_blank" rel="noopener">Development of training aids for chronic wasting disease detection dogs (Mallikarjun et al., 2025)</a>
       </div>
       </div>
 
@@ -91,8 +89,8 @@
         </p>
 
         <div class="links">
-          <a href="../mallikarjun-et-al-2025.pdf" target="_blank" rel="noopener">Mallikarjun et al. 2025</a>
-          <a href="#" target="_blank" rel="noopener">Mallikarjun et al. 2026 (accepted; PDF will be available shortly</a>
+          <a href="../mallikarjun-et-al-2025.pdf" target="_blank" rel="noopener">Development of training aids for chronic wasting disease detection dogs (Mallikarjun et al., 2025)</a>
+          <a href="#" target="_blank" rel="noopener">Generalization across sample volume in CWD detection dogs (Mallikarjun et al., 2026; accepted, PDF available shortly)</a>
         </div>
       </div>
 
@@ -118,7 +116,7 @@
         </p>
 
         <div class="links">
-        <a href="../mallikarjun-swartz-kane-2023.pdf" target="_blank" rel="noopener">Mallikarjun et al. 2023 paper</a>
+        <a href="../mallikarjun-swartz-kane-2023.pdf" target="_blank" rel="noopener">Detection of chronic wasting disease in white-tailed deer feces by trained dogs (Mallikarjun, Swartz, &amp; Kane, 2023)</a>
         </div>
       </div>
 
@@ -135,56 +133,4 @@
 
         <p>
           We then ran the test that mattered for training-aid development. I
-          synthesized "positive" aids by spiking CWD-negative feces with the three
-          most predictive VOCs from that set, at concentrations matched to confirmed
-          positive samples. If those three features were what the dogs were
-          detecting, the spiked samples should have read as positive. They didn't.
-          Dogs trained on real fecal matter classified the spiked samples as
-          negative.
-        </p>
-
-        <p>
-          The result rules out the simplest hypothesis about what the dogs were
-          using. The dogs are detecting something the top three statistical
-          discriminators don't capture, whether that's a wider feature set, relative
-          concentrations across many compounds, or interactions with the background
-          matrix the spike couldn't reproduce. The negative result is more
-          informative than the original GC-MS ranking was on its own: it tells us
-          which hypothesis to drop.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>What this work shows</h2>
-        <ul style="margin:0; padding-left:18px;">
-          <li>The trained distribution sets the generalization range. Shifts in substrate, sample volume, or deployment context all degrade performance.</li>
-          <li>Increased variety in training increases the category boundary, thus improving generalization in test scenarios.</li>
-          <li>GC-MS feature importance doesn't necessarily describe what the dog is using. An ablation can disagree with the chemistry, and the disagreement is informative.</li>
-          <li>When humans interpret a detector's output, their agreement rate with the system is its own measurement question.</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>Broader relevance</h2>
-        <p>
-          The questions transfer to any trained classifier you're deciding whether
-          to deploy: how to build a training set that covers what the system will
-          actually see, how to test for generalization before the cost of failure
-          is borne in the field, how to design ablations that test what you think
-          they test, and how to account for the humans interpreting the output.
-        </p>
-      </div>
-
-      <p class="note">
-        Back to <a href="../projects.html">Projects</a>.
-      </p>
-
-    </main>
-
-    <footer>
-      © 2026 Amritha Mallikarjun
-    </footer>
-
-  </div>
-</body>
-</html>
+          synthesized "positive" aids by spiking CWD-negative f
