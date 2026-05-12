@@ -1,1 +1,52 @@
+<h1>Inter-rater reliability and measurement validation</h1>
+<p class="subhead">I'm interested in what it takes to trust a rating. When the rater is a veterinarian assigning a body condition score, an owner looking at a photograph, or a detection dog calling a sample positive, the same questions apply: do raters agree, what kinds of experience produce accurate ratings, and what does disagreement tell you about the rubric itself.</p>
 
+<div class="section">
+  <h2>The core question</h2>
+  <p>When raters disagree, is the disagreement just noise? Or is it telling you something about the rubric, the raters, or the underlying construct?</p>
+</div>
+
+<div class="section">
+  <h2>When raters disagree, what is the disagreement telling you</h2>
+  <p>Body condition score (BCS) is the standard tool for assessing whether a dog is at a healthy weight. It's also subjective. A person palpates the dog, looks at it, and assigns a number on a 9-point scale. I wanted to know how much that number depends on who is doing the rating. Forty-three active explosive detection dogs were scored by four raters each: the dog's own handler, a primary care veterinarian, an ACVSMR resident, and a board-certified sports medicine specialist.</p>
+  <p>The three veterinarians agreed closely with each other. The handlers consistently scored their own dogs lower than any of the veterinarians did. All four raters gave the same BCS for only 7 of the 43 dogs. The disagreement has structure. Handlers see their own dogs every day. The scale itself carries loaded language ("too heavy," "obese") that may shape what people are willing to assign. The disagreement is information about the rating instrument and about who is using it.</p>
+  <div class="links">
+    <a href="../christie-et-al-2024-bcs-mcs.pdf" target="_blank" rel="noopener">Interobserver variability of BCS and MCS in working explosive detection dogs (Christie et al., 2024)</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>What kinds of experience produce accurate ratings</h2>
+  <p>The handler study raised an obvious follow-up. If raters disagree, which kinds of experience actually produce accurate ratings against a benchmark? I built a survey study to answer this directly. Just over a thousand respondents assigned BCS to 25 standardized photographs of Labrador retrievers. Benchmark scores were established by sports medicine veterinarians. Respondents were categorized by veterinary career status, prior exposure to BCS charts, dog sport participation, the BCS they gave their own dog, and how certain they felt about each rating.</p>
+  <p>Veterinarians and veterinary technicians scored closest to benchmark. Veterinary students and people in other canine-health professions did not. Prior exposure to a BCS chart helped, but only in combination with hands-on experience. Chart exposure alone wasn't enough. The most useful finding for thinking about rater quality more generally was about calibration. Respondents' certainty in their own ratings did not predict accuracy. Confident raters were not more correct than uncertain ones. People did not know when they were wrong.</p>
+  <div class="links">
+    <a href="../mallikarjun-et-al-bcs-survey.pdf" target="_blank" rel="noopener">Veterinary experience improves accuracy of visual body condition scores in Labrador retrievers (Mallikarjun et al., under review)</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Individual variation as signal</h2>
+  <p>Five working dogs trained to detect ovarian cancer in blood plasma were presented with VOC fractions of malignant samples that had been separated by micro-preparative gas chromatography into three time windows: 0-15 minutes, 15-25 minutes, and 25-35 minutes of GC eluent. The question was whether the dogs would converge on one fraction. A single dominant biomarker would predict this. They didn't converge. The dogs collectively spent less time on the late 25-35 minute fraction than on the early and middle fractions. Two of the five dogs, Ivey and Osa, spent significantly more time on that late fraction than the others did. The dogs agreed on what to reject and diverged on what to prefer. Individual sensors trained on the same target had learned to attend to different features of it.</p>
+  <p>A study on COVID-19 detection from worn T-shirts showed the same pattern from a different angle. The two highest-performing dogs averaged 88% sensitivity and 95% specificity. The three lowest-performing dogs averaged 46% sensitivity and 87% specificity. Treated as a single aggregate, the dogs underperformed the paired analytical model. Treated as individuals, some had learned a representation that generalized and some had not. The instrumental side carried its own version of this. The initial LDA model misclassified a specific subset of donors, and the misclassified samples shared a class characteristic the researchers had not initially modeled. Those donors shared a bed with a pet. Pet dander on the T-shirts was shifting the VOC profile. The dogs were unaffected by it. The model was not. Removing those samples produced a clean cross-validated separation, and that decision is itself a measurement choice about what the model is allowed to be confused by.</p>
+  <div class="links">
+    <a href="../kane-et-al-2022-ovarian-cancer.pdf" target="_blank" rel="noopener">Canine discrimination of ovarian cancer through volatile organic compounds (Kane et al., 2022)</a>
+    <a href="../gokool-et-al-2022-covid.pdf" target="_blank" rel="noopener">Biological sensors and instrumental analysis to discriminate COVID-19 odor signatures (Gokool et al., 2022)</a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>What this work shows</h2>
+  <ul style="margin:0; padding-left:18px;">
+    <li>Subjective rating scales produce structured disagreement. The structure is informative about the instrument and the rater.</li>
+    <li>Hands-on experience with the thing being rated produces more accurate ratings than passive exposure to the rubric. Chart-reading alone is not enough.</li>
+    <li>Rater confidence does not predict rater accuracy. People do not reliably know when they are wrong.</li>
+    <li>Aggregate performance metrics hide individual-level structure. When raters or sensors vary, the variation is often the most useful part of the data.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>Broader relevance</h2>
+  <p>These are the questions human-rater quality runs into in AI evaluation. Graders scoring model outputs disagree systematically. The disagreement is information about the rubric. Some kinds of grader experience produce calibrated ratings and some don't, and the difference is often hands-on familiarity with what good outputs actually look like. Grader confidence is a poor proxy for grader accuracy. When an eval aggregates across many graders or many model samples, the variance across individuals often carries more signal than the mean. The rating isn't done when the number is produced. It's done when you know what the number depends on.</p>
+</div>
+
+<p class="note">Back to <a href="../projects.html">Projects</a>.</p>
