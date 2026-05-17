@@ -456,3 +456,13 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+
+.featured-work {
+  border-left: 3px solid var(--accent, #5b6b5b);
+  padding-left: 16px;
+}
+
+.featured-work h3 {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
