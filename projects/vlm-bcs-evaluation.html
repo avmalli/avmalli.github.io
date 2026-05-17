@@ -27,45 +27,52 @@
       </p>
 
       <div class="section">
-        <h2>Headline result</h2>
+        <h2>Highlights</h2>
         <ul style="margin:0; padding-left:18px;">
-          <li><strong>Claude Opus 4.7:</strong> statistically indistinguishable from veterinarians (IRR 1.06, Holm p = 1.00).</li>
-          <li><strong>GPT-5.5:</strong> no detected difference from any human group, though IRRs suggest it likely sits closer to non-vets than to vets.</li>
-          <li><strong>Claude Sonnet 4.6:</strong> significantly worse than every veterinary group; indistinguishable only from non-vet humans.</li>
-          <li><strong>GPT-4.1:</strong> without an in-context rubric, significantly worse than every human group.</li>
+          <li><strong>Claude Opus 4.7:</strong> no detected difference from any human group, including veterinary professionals. </li>
+          <li><strong>GPT-5.5:</strong> no detected difference from any human group, including veterinary professionals.</li>
+          <li><strong>Claude Sonnet 4.6:</strong> significantly worse than every veterinary professional group; performs like the non-veterinary group.</li>
+          <li><strong>GPT-4.1:</strong> without reference material, significantly worse than every human group, even the non-veterinary group; with reference material, performs like the non-veterinary group.</li>
         </ul>
         <p style="margin-top:14px;">
-          The cross-family, cross-tier spread is the point: Opus 4.7 and GPT-4.1 differ from each other by roughly the same amount as a veterinarian differs from a member of the public. That statement is hard to make without a measured human gradient as the unit of comparison.
+          Opus 4.7 and GPT-4.1 differ from each other by roughly the same amount as a veterinarian differs from a member of the public. This comparison can be examined specifically because of the dataset providing a human expertise gradient.
         </p>
       </div>
 
       <div class="section">
         <h2>Why a measured gradient</h2>
         <p>
-          Model evaluation against human performance usually takes one of two forms. Either the comparison is against a small expert panel, or it is against a large undifferentiated crowd. Neither matches the structure of deployment. A medical AI tool will be used by physicians, nurses, and patients. A veterinary AI tool will be used by veterinarians, techs, and pet owners. The relevant question is not whether the model matches an expert or matches the average person, but where on the gradient of human expertise the model sits, and how it fails at the places where it falls short.
+          Model evaluation against human performance usually takes one of two forms; either the comparison is against a small expert panel, or it is against a large unstratified group of people. This study allows examination of the specific place that different models sit on the human expertise gradient, and how well different models reflect human behavior in the grading task.
         </p>
         <p>
-          I had access to an unusually well-characterized human gradient on a specific task, and used it to evaluate four frontier vision-language models. The task is canine body condition scoring. The methods generalize to any visual ordinal clinical scale.
+          I collected a large dataset from experts and non-experts in an ordinal grading task (body condition scoring of dogs), and used this dataset to evaluate four frontier vision-language models. The methods generalize to any visual ordinal clinical scale.
         </p>
       </div>
 
       <div class="section">
         <h2>The human anchor</h2>
         <p>
-          Body condition scoring (BCS) is a routine veterinary assessment. A trained clinician palpates the dog's ribs, waist, and abdomen and assigns a score on a 9-point scale, where 1 is emaciated, 5 is ideal, and 9 is severely obese. In person, scores are reasonably reliable, though a point of disagreement between expert raters is normal. From photographs, as in telehealth, the task is harder.
+          Body condition scoring (BCS) is a routine veterinary assessment. A trained clinician visually examines the dog and palpates the dog's ribs, waist, and abdomen, 
+          allowing them to assign a score on a standardized 9-point scale (1 is emaciated, 4-5 is ideal, and 9 is severely obese). 
+          In person, scores are reasonably reliable, though a point of disagreement between expert raters is normal. 
+          Without palpation, the task becomes more difficult; however, this is an increasingly important skill as telehealth becomes more
+          common in the veterinary field.
+          
         </p>
         <p>
           In a recent study (Mallikarjun et al., under review), my colleagues and I asked 1,010 respondents to assign BCS scores to 25 standardized Labrador retriever photo sets. Respondents included veterinarians, vet techs, vet students, and people with no veterinary background. We compared their scores against benchmarks set by sports medicine veterinarians who had hands-on access to the same dogs. Accuracy tracked expertise. Veterinary professionals averaged 0.77 to 0.81 mean absolute error; non-vet respondents averaged 0.90. Self-reported confidence did not predict accuracy. Prior exposure to a BCS chart did.
         </p>
         <p>
-          This dataset has the properties an evaluation anchor needs: a fixed stimulus set, an expert benchmark established separately by clinicians with hands-on access, a human distribution large enough that within-group variance is characterized, and an expertise gradient that is measured rather than assumed. MAE is known at each level of veterinary training, which is what most published model evaluations on similar tasks lack. Lalonde and Ghodrati (2025) evaluate seven VLMs on EASI grading of atopic dermatitis against a single dermatologist's annotations. Rosario et al. (2024) evaluate GPT-4 on RI-RADS against two human raters. Neither setup supports a statement like "this model sits between a resident and a board-certified physician." A measured human gradient does.
+          This dataset has the properties an evaluation anchor needs: a fixed stimulus set, an expert benchmark established separately by clinicians with hands-on access, a human distribution large enough that within-group variance is characterized, and an expertise gradient that is measured rather than assumed. MAE is known at each level of veterinary training, which is what most published model evaluations on similar tasks lack; studies often use 1-2 expert graders overall, rather than a full measured expertise gradient. 
         </p>
       </div>
 
       <div class="section">
         <h2>The study</h2>
         <p>
-          I ran the same 25-photo task on four frontier vision-language models: Claude Opus 4.7, Claude Sonnet 4.6, GPT-5.5, and GPT-4.1. Each model received the same study instructions human participants saw, the same photographs, and one of two conditions: the Royal Canin 9-point BCS chart included with the prompt, or no chart. Models produced a BCS score, then in a separate turn rated certainty on the same 1 to 5 scale humans used. Each cell was run multiple times.
+          I ran the same 25-photo task on four frontier vision-language models: Claude Opus 4.7, Claude Sonnet 4.6, GPT-5.5, and GPT-4.1. 
+          Each model received the same study instructions human participants saw, the same photographs, and one of two conditions: the Royal Canin 9-point BCS chart included with the prompt, or no chart. 
+          Models produced a BCS score, then in a separate turn rated certainty on the same 1 to 5 scale humans used. Each cell was run multiple times.
         </p>
         <p>
           To position models on the gradient, I extended the Poisson GLMM framework from the human-only analysis. Both human respondents and model+condition cells are levels of the rater group factor, with random intercepts for dog and rater. Incidence rate ratios (IRR) for each model cell against each human group are reported with Holm correction across 32 contrasts. This produces statements like "Opus is indistinguishable from veterinarians at the Holm-corrected threshold" with statistical backing, rather than eyeballed accuracy comparisons.
@@ -191,9 +198,7 @@
         <p>
           The BCS task is a worked example, not the destination. The methodological core — anchoring evaluation in a measured human gradient rather than a small expert panel, characterizing failure modes at specific points on the scale, treating calibration as a deployment-relevant property in its own right — is the contribution that travels. I'd be interested in applying it to evaluation problems where ground truth is contested or expertise-graded: model-graded preference data, expert-vs-crowd disagreement on harm or safety classifications, ordinal judgment tasks where the deployment context spans multiple levels of user expertise, and calibration evaluation tied to the actual cost of a confident wrong answer in a given deployment.
         </p>
-        <p>
-          I am currently exploring research and evaluation roles at AI labs. If empirical, human-anchored evaluation of frontier models on domain-specific tasks is relevant to what your team is building, I would welcome the conversation. <a href="../contact.html">Contact</a>.
-        </p>
+
       </div>
 
       <div class="section">
