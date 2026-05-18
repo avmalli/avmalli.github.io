@@ -21,9 +21,9 @@
     </header>
 
     <main>
-      <h1>Evaluating frontier multimodal models against a human expertise gradient: a case study on canine body condition scoring</h1>
+      <h1>A VLM case study examining visual canine body condition scoring</h1>
       <p class="subhead">
-        I evaluated four frontier vision-language models against a measured human expertise gradient on a visual ordinal clinical task, and they sit at distinguishable points on it. The methods generalize to any visual ordinal scale with an established rubric, an expert benchmark, and a measurable gradient of human expertise.
+        I evaluated four frontier vision-language models against a measured human expertise gradient on a visual ordinal task (canine body condition scoring). The models can then be directly compared to the human gradient. The methods generalize to any visual ordinal scale with a standardized scoring system, an expert benchmark, and a measurable gradient of human expertise.
       </p>
 
       <div class="section">
@@ -35,17 +35,17 @@
           <li><strong>GPT-4.1:</strong> without reference material, significantly worse than every human group, even the non-veterinary group; with reference material, performs like the non-veterinary group.</li>
         </ul>
         <p style="margin-top:14px;">
-          Opus 4.7 and GPT-4.1 differ from each other by roughly the same amount as a veterinarian differs from a member of the public. This comparison can be examined specifically because of the dataset providing a human expertise gradient.
+          Opus 4.7 / GPT 5.5 differ from Sonnet / GPT-4.1 by roughly the same amount as a veterinarian differs from a member of the public. 
         </p>
       </div>
 
       <div class="section">
         <h2>Why a measured gradient</h2>
         <p>
-          Model evaluation against human performance usually takes one of two forms; either the comparison is against a small expert panel, or it is against a large unstratified group of people. This study allows examination of the specific place that different models sit on the human expertise gradient, and how well different models reflect human behavior in the grading task.
+          Model evaluation against human performance usually takes one of two forms: either the comparison is against a small expert panel, or against a large unstratified group of people. This study allows examination of the specific place that different models sit on a human expertise gradient, and how well different models reflect human behavior in the grading task.
         </p>
         <p>
-          I collected a large dataset from experts and non-experts in an ordinal grading task (body condition scoring of dogs), and used this dataset to evaluate four frontier vision-language models. The methods generalize to any visual ordinal clinical scale.
+          I collected a large dataset from experts with various levels of experience and non-experts in an ordinal grading task (body condition scoring of dogs), and used this dataset to evaluate four frontier vision-language models. The methods generalize to any visual ordinal clinical scale.
         </p>
       </div>
 
@@ -60,10 +60,10 @@
           
         </p>
         <p>
-          In a recent study (Mallikarjun et al., under review), my colleagues and I asked 1,010 respondents to assign BCS scores to 25 standardized Labrador retriever photo sets. Respondents included veterinarians, vet techs, vet students, and people with no veterinary background. We compared their scores against benchmarks set by sports medicine veterinarians who had hands-on access to the same dogs. Accuracy tracked expertise. Veterinary professionals averaged 0.77 to 0.81 mean absolute error; non-vet respondents averaged 0.90. Self-reported confidence did not predict accuracy. Prior exposure to a BCS chart did.
+          In a recent study (Mallikarjun et al., in prep), my colleagues and I asked 1,010 respondents to assign BCS scores to 25 standardized photo sets of different labrador retrievers. Respondents included veterinarians, vet techs, vet students, people who work proximal to the veterinary profession (e.g., veterinary admin staff), and people with no veterinary background. We compared their scores against benchmarks set by sports medicine veterinarians who had hands-on access to the same dogs. We found that scoring accuracy as compared to the benchmarks tracked expertise. Veterinary professionals averaged 0.77 to 0.81 mean absolute error; non-vet respondents averaged 0.90. Further, self-reported confidence did not predict accuracy, but prior exposure to a BCS chart did.
         </p>
         <p>
-          This dataset has the properties an evaluation anchor needs: a fixed stimulus set, an expert benchmark established separately by clinicians with hands-on access, a human distribution large enough that within-group variance is characterized, and an expertise gradient that is measured rather than assumed. MAE is known at each level of veterinary training, which is what most published model evaluations on similar tasks lack; studies often use 1-2 expert graders overall, rather than a full measured expertise gradient. 
+          This dataset is excellent for use as an evaluation anchor, due to the standardized stimulus set and a clear expert benchmark established separately by sports medicine veterinarians, alongside a 1000+ value survey with a human distribution large enough to characterize within-group variance and differences between groups. MAE is known for each human group, allowing for comparison to the model performance. 
         </p>
       </div>
 
@@ -72,14 +72,14 @@
         <p>
           I ran the same 25-photo task on four frontier vision-language models: Claude Opus 4.7, Claude Sonnet 4.6, GPT-5.5, and GPT-4.1. 
           Each model received the same study instructions human participants saw, the same photographs, and one of two conditions: the Royal Canin 9-point BCS chart included with the prompt, or no chart. 
-          Models produced a BCS score, then in a separate turn rated certainty on the same 1 to 5 scale humans used. Each cell was run multiple times.
+          This was meant to somewhat align with the question about previous exposure to standardized BCS charts, athough given the ubiquity of BCS charts on the internet it is likely that it is already
+          in most models' training sets of information.
+          Models produced a BCS score for each dog, then in a separate turn assessed certainty of their own rating on the same 1 to 5 Likert scale humans used. Each cell was run multiple times to capture any variability in judgment. 
         </p>
         <p>
-          To position models on the gradient, I extended the Poisson GLMM framework from the human-only analysis. Both human respondents and model+condition cells are levels of the rater group factor, with random intercepts for dog and rater. Incidence rate ratios (IRR) for each model cell against each human group are reported with Holm correction across 32 contrasts. This produces statements like "Opus is indistinguishable from veterinarians at the Holm-corrected threshold" with statistical backing, rather than eyeballed accuracy comparisons.
-        </p>
-        <p class="note">
-          Note on equivalence: "no detected difference" is not the same as "equivalent." Model cells have smaller effective sample sizes than human groups, so some null contrasts may reflect power rather than true equivalence. Converting "no detected difference" into a proper equivalence claim would require TOST against a pre-specified margin or a Bayes factor for the null. The statements below should be read as "indistinguishable at the Holm-corrected threshold," not as tight equivalence.
-        </p>
+          To position models on the gradient, I used a generalized linear mixed-effects model with a Poisson distribution (rater (human groups + individual models) as a fixed effect) and post-hoc contrasts with a Holm correction to directly compare model performance to human performance. This is the same model framework used in the human-only analysis. 
+          Both human respondents and model+condition cells are levels of the rater group factor, with random intercepts for dog (from the photos rated) and rater.         </p>
+
         <div class="links">
           <a href="#" target="_blank" rel="noopener">Code, prompts, and analysis pipeline (GitHub)</a>
         </div>
@@ -91,9 +91,8 @@
           The headline result places each model on the measured human gradient.
         </p>
 
-        <!-- FIGURE: expertise gradient with model positions -->
         <div class="project-image">
-          <p class="image-caption">Figure 1. Each model's MAE plotted against the human expertise gradient, with the veterinary-professional band shaded.</p>
+          <p class="image-caption">Figure 1. Each model's MAE plotted alongside human MAE </p>
         </div>
 
         <p>
@@ -127,7 +126,9 @@
         </div>
 
         <p>
-          This is a deployment-relevant failure mode. Canine obesity is already under-recognized by owners, and a tool that systematically downgrades overweight dogs at exactly the point where intervention matters would reinforce that under-recognition. The structural pattern is consistent with the broader pointwise-LLM-evaluation literature, which documents scale compression as a robust phenomenon (Liu et al., 2024), and with the human-medicine analog: Rosario et al. (2024) found GPT-4 concentrated RI-RADS scores on grade C while human raters concentrated on grade D. What the BCS task adds is quantified high-end-specific compression, locatable on a clinical scale where the failure direction has obvious deployment cost.
+          This is a deployment-relevant failure mode. Canine obesity is already under-recognized by owners, and a tool that systematically downgrades overweight dogs at exactly the point where intervention matters would reinforce that under-recognition. 
+          The structural pattern is consistent with the broader pointwise-LLM-evaluation literature, which documents scale compression as a robust phenomenon (Liu et al., 2024), and with the human-medicine analog: Rosario et al. (2024) found GPT-4 concentrated 
+          RI-RADS scores on grade C while human raters concentrated on grade D. What the BCS task adds is quantified high-end-specific compression, locatable on a clinical scale where the failure direction has obvious deployment cost.
         </p>
 
         <h3>In-context reference material helps unevenly</h3>
