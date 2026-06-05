@@ -22,25 +22,25 @@
     <main>
       <h1>Olfactometer software &amp; system refinement</h1>
       <p class="subhead">
-        I led a rapid, iterative redesign of research-grade control software into a tool that non-expert trainers could run reliably
-        in high-tempo studies—without crashes, missing data, or fragile “only works if you click the right thing” workflows.
+        I led a rapid redesign of research software into a tool that non-expert trainers could reliably use 
+        in time-sensitive studies without the fear of missing data or fragile workflows.
       </p>
 
       <div class="section">
         <h2>Context</h2>
         <p>
-          We use portable, automated olfactometers to run controlled canine olfaction experiments. The physical devices were built
-          by collaborators at Texas Tech, and we received an initial codebase intended for expert research users. The system itself is
-          powerful—computer-controlled odor presentation, sensor-based response capture, and automated trial structure—but the first
-          version of the software assumed perfect inputs and would fail hard when real users did normal things: skipping a field,
-          selecting an unexpected option, or running an edge-case trial sequence.
+          We use portable, automated olfactometers to run controlled olfaction experiments. The physical devices were built
+          by collaborators at Texas Tech. We received an initial codebase, written by the Texas Tech researchers, meant for expert users. The system itself is
+          powerful—computer-controlled odor presentation, sensor-based response capture, and automated trial structure, but the first
+          version of the software assumed perfect inputs and would fail when real users made common mistakes like skipping a field,
+          selecting an unexpected option, or running an edge-case set of trials.
         </p>
 
         <div class="project-image">
           <img src="/olfactometers.jpg"
                alt="Working dog using automated olfactometer system at the Penn Vet Working Dog Center. Inset shows internal electronics and tubing of the device.">
           <p class="image-caption">
-            Portable automated olfactometer system used for controlled odor presentation and response capture in canine detection studies.
+            Portable automated olfactometer system used for controlled odor presentation and response capture in canine detection studies
           </p>
         </div>
        </div>
@@ -50,19 +50,22 @@
         <ul class="publist">
           <li class="pub">
             <p class="citation">
-              <strong>Fragility:</strong> The program crashed on common input errors (e.g., starting a lineup with no odor selected; selecting a dog name
+              <strong>Fragility:</strong> The program crashed on common input errors (e.g., starting a lineup with no target odor selected; selecting a participant name
               not present in the backend list).
             </p>
           </li>
           <li class="pub">
             <p class="citation">
               <strong>Usability gap:</strong> Trainers needed clear workflow prompts in the UI and a way to adjust settings mid-run
-              without restarting the whole program to improve usablility and flexibility.
+              without restarting the whole program to improve usablility and flexibility. 
             </p>
           </li>
           <li class="pub">
             <p class="citation">
-              <strong>Errors lead to delays:</strong> Each program crash delayed session timing, and the difficulty using the program caused missing data and introduced inconsistencies across experimenters.
+              <strong>Errors lead to delays:</strong> Each program crash delayed session timing, and the difficulty using
+              the program caused missing data and introduced inconsistencies across experimenters. 
+              Trainers' trust in the program was severely diminished after initial use
+              and multiple frustrating crashes.
             </p>
           </li>
         </ul>
@@ -71,7 +74,8 @@
       <div class="section">
         <h2>My role</h2>
         <p>
-     I redesigned portions of both the backend logic and the user interface to improve reliability, reduce failure points, and support non-expert users (dog trainers and researchers without a programming background).
+     I redesigned portions of both the backend logic and the user interface to improve reliability, 
+          reduce failure points, and support non-expert users (dog trainers and researchers without a programming background).
         </p>
       </div>
 
@@ -84,7 +88,7 @@
           <li class="pub">
             <p class="citation">
               <strong>Defensive input handling:</strong> Added validation and guardrails so common mistakes produced helpful feedback instead of a crash
-              (e.g., blocking “start trial” when required fields are missing; handling unexpected dog/odor values gracefully).
+              (e.g., blocking “start trial” when required fields are missing; handling unexpected dog/odor information gracefully).
             </p>
           </li>
 
@@ -98,22 +102,19 @@
 
           <li class="pub">
             <p class="citation">
-              <strong>Flexible settings:</strong> Implemented a “change settings” pathway so trainers could correct configuration errors or adjust parameters
-              between trials without closing and reopening the program. Implemented a "skip trial" button to easily move past unwanted trials without waiting a minute for it to time out.
+              <strong>Flexible settings:</strong>  Trainers wanted to be able to change settings mid-session; this was intially not possible without closing out and
+              restarting the whole program. I worked with a student to implement a change settings button that allows the trainers to edit odor information and
+              olfactometer settings mid-session, making the session more seamless and creating cleaner data. I also implemented a "skip trial" button to easily move past unwanted
+              trials (for example, if the dog needed a break but the trial began before the session was paused) without waiting a full minute for the trial to time out, wasting time
+              and odor.
             </p>
           </li>
 
           <li class="pub">
             <p class="citation">
-              <strong>Streamlined data capture and upload:</strong> Designed (and with a computer science intern, implemented) a workflow that automatically packages
-              and uploads session data to Airtable, reducing manual file handling and improving consistency across experimenters.
-            </p>
-          </li>
-
-          <li class="pub">
-            <p class="citation">
-              <strong>Operational robustness:</strong> Focused on easy-to-implement features that reduce real-world failure: clearer prompts, safer defaults,
-              and predictable recovery behavior when something goes off-script.
+              <strong>Streamlined data capture and upload:</strong> Designed and implemented a workflow that automatically packages
+              and uploads session data to Airtable, reducing manual file handling and improving consistency across experimenters. This also allows
+              collaborators to immediately see real-time summarized data and full session data.
             </p>
           </li>
         </ul>
