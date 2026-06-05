@@ -104,16 +104,16 @@
             <p class="citation">
               <strong>Flexible settings:</strong>  Trainers wanted to be able to change settings mid-session; this was intially not possible without closing out and
               restarting the whole program. I worked with a student to implement a change settings button that allows the trainers to edit odor information and
-              olfactometer settings mid-session, making the session more seamless and creating cleaner data. I also implemented a "skip trial" button to easily move past unwanted
-              trials (for example, if the dog needed a break but the trial began before the session was paused) without waiting a full minute for the trial to time out, wasting time
+              olfactometer settings mid-session, making the session more seamless and creating cleaner data. I also implemented a "skip trial" button to easily move past
+              trials if needed (e.g., if the dog needed a break but the trial began before the session was paused) without waiting for the trial to time out, wasting time
               and odor.
             </p>
           </li>
 
           <li class="pub">
             <p class="citation">
-              <strong>Streamlined data capture and upload:</strong> Designed and implemented a workflow that automatically packages
-              and uploads session data to Airtable, reducing manual file handling and improving consistency across experimenters. This also allows
+              <strong>Streamlined data capture and upload:</strong> I designed and implemented a program that automatically packages
+              and uploads session data to project-specific Airtable databases, which eliminates the need for manual file handling. This also allows
               collaborators to immediately see real-time summarized data and full session data.
             </p>
           </li>
@@ -124,11 +124,14 @@
   <h2>Why this matters</h2>
 
   <p>
-    The original software was built by and for specific users who already understood the system’s assumptions. In practice, our researchers and trainers needed to run structured experiments quickly and consistently, without worrying about whether a missing field or unexpected input would crash a session or corrupt a dataset.
+    The original software was built by and for specific experimenters who already understood the system and its intricacies. In practice, our researchers and trainers 
+    (as well as those at other universities and organizations that acquired this system) needed to run structured experiments quickly and consistently,
+    without worrying about whether a missing field or unexpected input would crash a session.
   </p>
 
   <p>
-    I rewrote validation logic, clarified trial configuration workflows, and added safeguards against common edge cases. I also standardized output formatting to make downstream statistical analysis more reliable. This make workflow easier for program users and ensured that the data we collected was complete and accurate. 
+    I wrote validation logic, smoothed session workflows, and added safeguards against common edge cases. I also standardized output formats to make downstream statistical analysis more reliable. 
+    This makes the software easier for nonexpert users and ensured that the data we collected was complete and accurate. 
   </p>
 
   <p>
