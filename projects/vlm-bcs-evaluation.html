@@ -35,7 +35,7 @@
           <li><strong>GPT-4.1:</strong> without reference material, significantly worse than every human group, even the non-veterinary group; with reference material, performs like the non-veterinary group.</li>
         </ul>
         <p style="margin-top:14px;">
-          Opus 4.7 / GPT 5.5 differ from Sonnet / GPT-4.1 by roughly the same amount as a veterinarian differs from a member of the public. 
+          Opus 4.7 / GPT 5.5's scores differ from Sonnet / GPT-4.1's scores by roughly the same amount that a veterinarian differs from a member of the public. 
         </p>
       </div>
 
@@ -45,7 +45,7 @@
           Model evaluation against human performance usually takes one of two forms: either the comparison is against a small expert panel, or against a large unstratified group of people. This study allows examination of the specific place that different models sit on a human expertise gradient, and how well different models reflect human behavior in the grading task.
         </p>
         <p>
-          I collected a large dataset from experts with various levels of experience and non-experts in an ordinal grading task (body condition scoring of dogs), and used this dataset to evaluate four frontier vision-language models. The methods generalize to any visual ordinal clinical scale.
+          I collected a large dataset from experts with various levels of experience and non-experts in an ordinal grading task (body condition scoring of dogs), and used this dataset to evaluate four frontier vision-language models. The methods generalize to any visual ordinal clinical scale. The dataset collection was funded by the Waltham Foundation.
         </p>
       </div>
 
@@ -53,8 +53,8 @@
         <h2>The human anchor</h2>
         <p>
           Body condition scoring (BCS) is a routine veterinary assessment. A trained clinician visually examines the dog and palpates the dog's ribs, waist, and abdomen, 
-          allowing them to assign a score on a standardized 9-point scale (1 is emaciated, 4-5 is ideal, and 9 is severely obese). 
-          In person, scores are reasonably reliable, though a point of disagreement between expert raters is normal. 
+          which allows them to assign the dog a score on a standardized 9-point scale (1 is emaciated, 4-5 is ideal, and 9 is severely obese). 
+          In person, scores are reasonably consistent, though a point of disagreement between expert raters is normal. 
           Without palpation, the task becomes more difficult; however, this is an increasingly important skill as telehealth becomes more
           common in the veterinary field.
           
@@ -70,14 +70,14 @@
       <div class="section">
         <h2>The study</h2>
         <p>
-          I ran the same 25-photo task on four frontier vision-language models: Claude Opus 4.7, Claude Sonnet 4.6, GPT-5.5, and GPT-4.1. 
+          I then ran the same 25-photo task on four frontier vision-language models: Claude Opus 4.7, Claude Sonnet 4.6, GPT-5.5, and GPT-4.1. 
           Each model received the same study instructions human participants saw, the same photographs, and one of two conditions: the Royal Canin 9-point BCS chart included with the prompt, or no chart. 
           This was meant to somewhat align with the question about previous exposure to standardized BCS charts, athough given the ubiquity of BCS charts on the internet it is likely that it is already
           in most models' training sets of information.
           Models produced a BCS score for each dog, then in a separate turn assessed certainty of their own rating on the same 1 to 5 Likert scale humans used. Each cell was run multiple times to capture any variability in judgment. 
         </p>
         <p>
-          To position models on the gradient, I used a generalized linear mixed-effects model with a Poisson distribution (rater (human groups + individual models) as a fixed effect) and post-hoc contrasts with a Holm correction to directly compare model performance to human performance. This is the same model framework used in the human-only analysis. 
+          To position models on the gradient, I used a generalized linear mixed-effects model with a Poisson distribution (rater (human groups + individual models) as a fixed effect) and post-hoc contrasts with a Holm correction to directly compare model performance to human performance. This is the same model used in the human-only analysis. 
           Both human respondents and model+condition cells are levels of the rater group factor, with random intercepts for dog (from the photos rated) and rater.         </p>
 
         <div class="links">
@@ -86,9 +86,9 @@
       </div>
 
       <div class="section">
-        <h2>What the gradient surfaces: model positioning</h2>
+        <h2>The Model Expertise Gradient</h2>
         <p>
-          The headline result places each model on the measured human gradient.
+          Model performance was then directly compared to human performance.
         </p>
 
         <div class="project-image">
@@ -96,83 +96,19 @@
         </div>
 
         <p>
-          Claude Opus 4.7 was statistically indistinguishable from every human group, including veterinarians (IRR 1.06, Holm p = 1.00 in both chart conditions). Both Opus conditions sat within the veterinary-professional band, with MAE around 0.84.
+          Claude Opus 4.7 was statistically indistinguishable from every human group, including veterinarians. Both Opus conditions (with BCS chart and without) sat within the veterinary-professional band, with MAE around 0.84.
         </p>
         <p>
-          GPT-5.5 was also statistically indistinguishable from every human group at the Holm-corrected threshold (all p &gt; 0.9), though IRRs of 1.24 to 1.35 against veterinary professionals suggest it likely sits closer to the non-vet end than to vets. The non-significance reflects smaller per-cell sample size for model cells, so this is "no detected difference," not tight equivalence.
+          GPT-5.5 was also statistically indistinguishable from every human group, including veterinarians.
         </p>
         <p>
-          Claude Sonnet 4.6 was significantly worse than every veterinary professional group (IRR 1.49 to 1.66; Holm p ≤ 0.03 in the no-chart condition, ≤ 0.006 with chart). It was statistically indistinguishable only from non-vet humans.
+          Claude Sonnet 4.6 was significantly worse than every veterinary professional group. It was statistically indistinguishable only from non-vet humans.
         </p>
         <p>
-          GPT-4.1 without the chart was dramatically worse than every human group (IRR 2.16 to 2.50, all Holm p &lt; 0.0001). With the chart it improved but remained significantly worse than veterinary professionals.
+          GPT-4.1 without the chart had a larger MAE than every human group; however, with the chart, it improved to the level of non-vet humans. 
         </p>
       </div>
 
-      <div class="section">
-        <h2>What the gradient surfaces: structured failure modes</h2>
-        <p>
-          A gradient anchor also supports characterization of where on the scale models fail, not just whether they fail on average. Three patterns emerged.
-        </p>
-
-        <h3>Models compress the scale, with the compression concentrated at the high end</h3>
-        <p>
-          Plotting mean rating against the vet benchmark gives a regression slope below 1.0 for every model: Opus 0.64, GPT-5.5 0.59, GPT-4.1 0.57, Sonnet 0.55, against humans at 0.84. Humans show some compression. Models show more, and it concentrates at BCS 8 and 9, where every model except Opus systematically rates overweight and obese dogs as healthier than the benchmark. The deviation at the high end exceeds the human disagreement envelope: humans disagree with the benchmark by roughly a point in either direction, while models disagree by more than a point, consistently downward.
-        </p>
-
-        <!-- FIGURE: mean rating vs. vet benchmark -->
-        <div class="project-image">
-          <p class="image-caption">Figure 2. Mean model rating versus the veterinary benchmark, with the human disagreement envelope for comparison.</p>
-        </div>
-
-        <p>
-          This is a deployment-relevant failure mode. Canine obesity is already under-recognized by owners, and a tool that systematically downgrades overweight dogs at exactly the point where intervention matters would reinforce that under-recognition. 
-          The structural pattern is consistent with the broader pointwise-LLM-evaluation literature, which documents scale compression as a robust phenomenon (Liu et al., 2024), and with the human-medicine analog: Rosario et al. (2024) found GPT-4 concentrated 
-          RI-RADS scores on grade C while human raters concentrated on grade D. What the BCS task adds is quantified high-end-specific compression, locatable on a clinical scale where the failure direction has obvious deployment cost.
-        </p>
-
-        <h3>In-context reference material helps unevenly</h3>
-        <p>
-          Providing the Royal Canin chart alongside the photo does not produce uniform improvement.
-        </p>
-
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Model</th>
-              <th>No chart MAE</th>
-              <th>Chart MAE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Claude Opus 4.7</td><td>0.84</td><td>0.84</td></tr>
-            <tr><td>Claude Sonnet 4.6</td><td>1.19</td><td>1.27</td></tr>
-            <tr><td>GPT-5.5</td><td>1.01</td><td>0.97</td></tr>
-            <tr><td>GPT-4.1</td><td>1.81</td><td>1.24</td></tr>
-          </tbody>
-        </table>
-
-        <p>
-          For Opus, Sonnet, and GPT-5.5, descriptive differences between conditions are within noise; Holm-adjusted contrasts showed no detectable accuracy difference. GPT-4.1 was the exception. Its IRR dropped from 2.16-2.50 against human groups to 1.48-1.71 with the chart, and the chart also collapsed its across-run variance: without the chart, median run-to-run SD on the same item was 2.5 points, and with the chart it dropped to 0. For the weakest model in the comparison, the chart functions as task scaffolding that stabilizes responses.
-        </p>
-        <p>
-          When asked to articulate the BCS rubric without an image, all four models could describe the 9-point scale in detail. Anthropic models cited Purina/WSAVA; GPT-4.1 cited Laflamme (1997). The underscoring is not due to absence of rubric knowledge. The chart helps the model that needs scaffolding to apply the rubric visually, and does not help the models that already apply it well. This is consistent with what the LLM-as-judge literature has observed about pointwise rating: misalignment lives in how the rubric is applied, not in its prior representation (Liu et al., 2024).
-        </p>
-
-        <h3>Self-reported confidence is unevenly informative, with one model anti-calibrated</h3>
-        <p>
-          I asked each model to rate certainty on the same 1 to 5 scale used in the human study, in a separate turn from the BCS score.
-        </p>
-
-        <!-- FIGURE: calibration plot -->
-        <div class="project-image">
-          <p class="image-caption">Figure 3. MAE as a function of self-reported certainty, by model.</p>
-        </div>
-
-        <p>
-          Claude Opus showed the cleanest pattern, with MAE dropping from about 1.05 at moderate certainty to about 0.52 at higher certainty. Sonnet and GPT-5.5 showed shallow or flat curves, similar to the human reference (humans in the underlying study also showed no confidence-accuracy correlation). GPT-4.1 is the concerning case: it has the highest average certainty of any model (4.07 of 5, where 4 is "somewhat certain" and 5 is "very certain") and the worst accuracy. High certainty with poor performance also appears in dermatology VLMs (Xu et al., 2025), and it is the deployment-relevant failure mode for any tool that surfaces confidence to a user. A user shown a confident wrong answer has no signal that follow-up is warranted; a user shown a hesitant wrong answer does.
-        </p>
-      </div>
 
       <div class="section">
         <h2>Limitations</h2>
@@ -190,20 +126,14 @@
           Clinical analogs include dermatology severity grading (EASI, SCORAD, PASI), radiographic grading (Kellgren-Lawrence, BI-RADS), wound severity scoring, ECOG performance status, and ophthalmologic grading. The methodology also extends beyond clinical scales: model evaluation on any ordinal judgment task where ground truth is contested or expertise-graded — content moderation severity, code review quality, writing quality ratings, harmfulness classifications — has the same structure. The unit of comparison is a measured human gradient; the question is where on that gradient a model sits and how it fails where it falls short.
         </p>
         <p>
-          What a measured human gradient gives you that a small expert benchmark does not is the ability to make graded, deployment-relevant statements. <em>This model is fit for use at the level of a trained specialist. This model is fit for use at the level of a trainee with supervision. This model surfaces confident wrong answers in a way that makes it unfit for unsupervised screening.</em> Without the gradient, those statements collapse to "model is or is not as good as expert," which is rarely the actual deployment question.
-        </p>
+          What a measured human gradient gives you that a small expert benchmark does not is the ability to make graded, deployment-relevant statements about the models with reference to human performance. 
       </div>
 
-      <div class="section">
-        <h2>What I'd want to do next with this</h2>
-        <p>
-          The BCS task is a worked example, not the destination. The methodological core — anchoring evaluation in a measured human gradient rather than a small expert panel, characterizing failure modes at specific points on the scale, treating calibration as a deployment-relevant property in its own right — is the contribution that travels. I'd be interested in applying it to evaluation problems where ground truth is contested or expertise-graded: model-graded preference data, expert-vs-crowd disagreement on harm or safety classifications, ordinal judgment tasks where the deployment context spans multiple levels of user expertise, and calibration evaluation tied to the actual cost of a confident wrong answer in a given deployment.
-        </p>
 
       </div>
 
       <div class="section">
-        <h2>References</h2>
+        <h2>Related References</h2>
         <ul class="publist">
           <li class="pub"><p class="citation">Lalonde, M. &amp; Ghodrati, H. (2025). VLM Models and Automated Grading of Atopic Dermatitis. arXiv:2505.17835.</p></li>
           <li class="pub"><p class="citation">Liu, Y., Zhou, H., Guo, Z., Shareghi, E., Vulić, I., Korhonen, A., &amp; Collier, N. (2024). Aligning with Human Judgement: The Role of Pairwise Preference in Large Language Model Evaluators. COLM 2024.</p></li>
